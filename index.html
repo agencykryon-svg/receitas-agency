@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>365 Receitas Sem Açúcar, Sem Glúten e Sem Lactose | Chef Luana Queiroz</title>
+<meta name="description" content="365 receitas práticas e saborosas sem açúcar, sem glúten e sem lactose. Acesso imediato. Garantia de 15 dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-dark:#356b57;
+    --green-title:#178a3e;
+    --green-btn:#16a34a;
+    --green-btn-hover:#12883d;
+    --green-footer:#23544a;
+    --green-light:#d9e8dd;
+    --orange:#ea580c;
+    --cream:#fff6ec;
+    --gray-bg:#f9f9f7;
+    --text:#2b2b2b;
+    --muted:#5c5c5c;
+    --navy:#2f4479;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',Arial,sans-serif;color:var(--text);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1500px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{text-wrap:balance}
+
+  /* Botões */
+  .btn{display:inline-block;background:var(--green-btn);color:#fff;font-weight:800;text-transform:uppercase;border-radius:15px;padding:27px 54px;font-size:27px;box-shadow:0 9px 27px rgba(22,163,74,.3);transition:transform .2s,background .2s;text-align:center;cursor:pointer;border:0;font-family:inherit}
+  .btn:hover{background:var(--green-btn-hover);transform:translateY(-2px)}
+  .btn-sm{font-size:22.5px;padding:21px 45px}
+  .center{text-align:center}
+
+  /* Topo */
+  .topbar{background:var(--green-dark);color:#fff;text-align:center;font-size:19.5px;font-weight:700;padding:13.5px 18px;box-shadow:0 2px 9px rgba(0,0,0,.15)}
+
+  /* Hero */
+  .hero{padding:42px 0 60px;text-align:center}
+  .hero h1{font-weight:900;color:var(--green-title);letter-spacing:-1.5px;line-height:1.1;font-size:60px;max-width:900px;margin:0 auto}
+  .hero h1 small{font-size:25.5px;letter-spacing:-.12px;font-weight:900}
+  .hero .sub{font-weight:600;color:var(--muted);font-size:22.5px;max-width:660px;margin:21px auto 18px}
+  .hero .banner{max-width:720px;margin:0 auto;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.12);overflow:hidden}
+  .hero .desc{color:var(--muted);font-size:19.5px;max-width:540px;margin:15px auto 27px}
+  .trust{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin-top:27px}
+
+  /* Benefícios */
+  .benefits{background:var(--gray-bg);padding:45px 0 60px;text-align:center}
+  .grad-title{font-weight:900;font-size:33px;background:linear-gradient(90deg,#1b7a3c,#1d5fbf);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;margin-bottom:33px}
+  .ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:540px;margin:0 auto 33px;text-align:left}
+  .ben{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #ececec;border-radius:13.5px;padding:9px 12px;font-size:14.2px;line-height:1.3}
+  .ben .ic{flex:0 0 33px;height:33px;border-radius:9px;background:#fff2d0;display:grid;place-items:center;font-size:16.5px}
+
+  /* Carrossel receitas */
+  .slider{max-width:408px;margin:60px auto 0;position:relative}
+  .slides{overflow:hidden;border-radius:15px}
+  .track{display:flex;transition:transform .6s ease}
+  .track img{flex:0 0 100%;width:100%;aspect-ratio:1/1;object-fit:cover}
+  .dots{display:flex;justify-content:center;gap:7.5px;margin-top:18px}
+  .dots button{width:10.5px;height:10.5px;border-radius:7.5px;border:0;background:#cfcfcf;cursor:pointer;transition:width .3s,background .3s}
+  .dots button.active{width:30px;background:var(--orange)}
+
+  /* Depoimentos WhatsApp */
+  .testi{background:var(--gray-bg);padding:15px 0 39px}
+  .testi h2{font-weight:900;color:var(--green-dark);font-size:31.5px;text-align:center;margin-bottom:36px}
+  .testi-box{background:#fff;border-radius:24px;box-shadow:0 12px 45px rgba(0,0,0,.08);padding:36px 39px 21px;max-width:1074px;margin:0 auto}
+  .testi-track{display:flex;gap:9px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .testi-track::-webkit-scrollbar{display:none}
+  .testi-track img{flex:0 0 calc(33.333% - 6px);scroll-snap-align:start;border-radius:9px;min-width:0}
+  .swipe{text-align:center;color:var(--green-dark);font-weight:600;font-size:15px;margin-top:15px}
+
+  /* O que vai preparar */
+  .prepare{background:var(--green-light);padding:33px 0 30px}
+  .prepare h2{text-align:center;font-weight:900;color:var(--green-dark);font-size:39px;margin-bottom:33px}
+  .prep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1074px;margin:0 auto}
+  .card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 21px rgba(0,0,0,.06);text-align:center}
+  .card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .card h3{font-size:14.2px;font-weight:800;color:var(--green-dark);padding:18px 15px 6px;line-height:1.3}
+  .card p{font-size:12.8px;color:var(--muted);padding:0 18px 21px;line-height:1.35}
+
+  /* +357 */
+  .more{background:var(--gray-bg);padding:30px 0}
+  .more-box{background:var(--green-dark);border-radius:24px;max-width:954px;margin:0 auto;padding:45px 36px 51px;color:#fff;text-align:center;box-shadow:0 18px 45px rgba(0,0,0,.18)}
+  .more-box h2{font-weight:900;font-size:30px;margin-bottom:27px}
+  .more-box .showcase{max-width:585px;margin:0 auto 36px}
+  .more-box .lead{font-size:16.5px;opacity:.85;margin-bottom:21px}
+  .pills{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:36px}
+  .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:45px;padding:7.5px 21px;font-size:15px;font-weight:600}
+
+  /* Para você */
+  .foryou{padding:24px 0 27px;text-align:center}
+  .foryou h2{font-weight:900;color:var(--green-dark);font-size:27px;margin-bottom:27px}
+  .fy-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:834px;margin:0 auto;text-align:left}
+  .fy{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(90deg,#fff7ef,#fff);border:1px solid #f4e8dc;border-radius:12px;padding:12px 15px;font-size:13.5px;line-height:1.4}
+  .fy .chk{flex:0 0 21px;height:21px;border-radius:50%;background:#ffd9c7;color:var(--orange);font-size:12px;font-weight:900;display:grid;place-items:center}
+
+  /* Bônus */
+  .bonus{background:var(--cream);padding:30px 0 30px;text-align:center}
+  .badge{display:inline-block;background:var(--orange);color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;padding:6px 15px;border-radius:30px;margin-bottom:12px}
+  .bonus h2{font-weight:900;color:var(--green-dark);font-size:39px;line-height:1.15;text-transform:uppercase;margin-bottom:39px}
+  .bonus h2 span{color:var(--orange);text-transform:none;display:block}
+  .bonus-list{max-width:717px;margin:0 auto;display:flex;flex-direction:column;gap:18px;text-align:left}
+  .b-item{display:flex;background:#fff;border-radius:15px;box-shadow:0 6px 21px rgba(0,0,0,.08);overflow:hidden;position:relative}
+  .b-item .tag{position:absolute;top:0;left:0;background:var(--orange);color:#fff;font-size:9.8px;font-weight:800;padding:4.5px 9px;border-bottom-right-radius:9px;z-index:2}
+  .b-item .thumb{flex:0 0 135px;background:#f1f1f1;display:flex;align-items:center;justify-content:center;padding:12px}
+  .b-item .thumb img{max-height:114px;box-shadow:2px 2px 9px rgba(0,0,0,.25)}
+  .b-item .info{padding:15px 21px}
+  .b-item h3{font-size:18px;font-weight:700;color:var(--green-dark)}
+  .b-item p{font-size:13.5px;color:var(--muted);margin:2px 0 9px}
+  .price-row{display:flex;align-items:center;gap:9px;font-size:12px}
+  .price-row s{color:#999;font-weight:600}
+  .free{background:#dcfce7;color:#15803d;font-weight:800;text-transform:uppercase;padding:2px 10.5px;border-radius:18px}
+  .total{max-width:1074px;margin:39px auto 0;background:var(--green-dark);color:#fff;font-weight:800;text-transform:uppercase;border-radius:12px;padding:18px;font-size:21px;box-shadow:0 9px 24px rgba(0,0,0,.15)}
+
+  /* Planos */
+  .plans{background:var(--green-dark);padding:39px 0 0;color:#fff;text-align:center}
+  .plans h2{font-weight:900;font-size:39px;text-transform:uppercase}
+  .plans .lead{font-size:16.5px;font-weight:600;opacity:.9;margin:2px 0 39px}
+  .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1074px;margin:0 auto}
+  .plan{background:#fff;color:var(--text);border-radius:21px;padding:36px 30px 30px;text-align:left;display:flex;flex-direction:column;position:relative;border-top:7.5px solid var(--orange)}
+  .plan.premium{border-top:0}
+  .plan .chip{align-self:center;font-size:12px;font-weight:800;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
+  .chip.basic{background:#fde9cf;color:var(--orange)}
+  .chip.super{background:var(--orange);color:#fff}
+  .ribbon{position:absolute;top:9px;right:9px;background:#e11d2e;color:#fff;font-size:9.8px;font-weight:800;text-transform:uppercase;padding:4.5px 12px;border-radius:15px}
+  .plan h3{text-align:center;color:var(--orange);font-weight:800;font-size:24px;margin-bottom:18px}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:10.5px;font-size:14.2px;font-weight:600}
+  .plan ul li{display:flex;gap:12px;align-items:center}
+  .plan ul li::before{content:"✓";color:var(--green-btn);font-weight:900;font-size:18px}
+  .plan .bx-title{text-align:center;color:var(--orange);font-weight:800;font-size:13.5px;text-transform:uppercase;margin:21px 0 9px}
+  .plan ul.gifts li::before{content:"🎁";font-size:15px}
+  .plan .bottom{margin-top:auto;text-align:center;padding-top:30px}
+  .plan .from{color:#e11d2e;font-size:13.5px;font-weight:700;text-decoration:line-through}
+  .plan .price{color:var(--green-dark);font-weight:900;font-size:57px;line-height:1.1;margin-bottom:15px}
+  .plan .btn{font-size:16.5px;padding:19.5px 45px;width:100%;max-width:252px}
+  .plans-note{background:var(--green-dark);padding:33px 24px 39px;font-size:13.5px;color:#fff;text-align:center;margin-top:45px;border-top:1px solid rgba(255,255,255,.08)}
+
+  /* Avaliações */
+  .reviews{padding:45px 0 30px;text-align:center}
+  .reviews h2{font-weight:900;color:var(--green-dark);font-size:27px;text-transform:uppercase;line-height:1.25;max-width:645px;margin:0 auto}
+  .reviews h2 span{color:var(--orange)}
+  .reviews .lead{font-size:15px;color:var(--muted);margin-bottom:24px}
+  .score{display:flex;gap:42px;align-items:center;background:#fff;border-radius:18px;box-shadow:0 9px 30px rgba(0,0,0,.08);padding:24px 33px;max-width:687px;margin:0 auto 39px}
+  .score .big{text-align:center;flex:0 0 auto}
+  .score .big b{display:block;font-size:51px;font-weight:900;color:var(--green-dark);line-height:1}
+  .stars{color:var(--orange);font-size:16.5px;letter-spacing:1px}
+  .score .big small{font-size:11.2px;color:var(--muted)}
+  .bars{flex:1;display:flex;flex-direction:column;gap:9px}
+  .bar{display:flex;align-items:center;gap:15px;font-size:12px;font-weight:600}
+  .bar .line{flex:1;height:7.5px;background:#e8e8e8;border-radius:6px;overflow:hidden}
+  .bar .fill{height:100%;background:var(--orange);border-radius:6px}
+  .rv-grid{display:grid;grid-template-columns:1fr 1fr;gap:21px;max-width:687px;margin:0 auto;text-align:left}
+  .rv{background:#fff;border-radius:15px;box-shadow:0 6px 21px rgba(0,0,0,.08);padding:21px}
+  .rv .head{display:flex;gap:12px;align-items:center;margin:6px 0 15px}
+  .av{width:33px;height:33px;border-radius:50%;color:#fff;font-size:11.2px;font-weight:700;display:grid;place-items:center}
+  .rv .name{font-size:13.5px;font-weight:700;line-height:1.1}
+  .rv .date{font-size:10.5px;color:var(--muted)}
+  .rv p{font-size:12.8px;line-height:1.55;color:#333}
+  .rv img{width:105px;height:105px;object-fit:cover;border-radius:12px;margin:15px 0}
+  .rv .actions{display:flex;gap:9px}
+  .rv .actions span{border:1px solid #e3e3e3;border-radius:21px;font-size:10.5px;font-weight:600;padding:4.5px 12px;color:#555}
+
+  /* Garantia */
+  .guarantee{background:var(--cream);padding:36px 0}
+  .g-box{background:#fff;max-width:717px;margin:0 auto;border-radius:24px;box-shadow:0 12px 36px rgba(0,0,0,.1);padding:30px 33px;display:flex;gap:30px;align-items:center}
+  .g-box img{flex:0 0 111px;width:111px}
+  .g-chip{display:inline-block;background:#eef2ee;color:var(--green-dark);font-size:10.5px;font-weight:800;text-transform:uppercase;padding:4.5px 13.5px;border-radius:18px}
+  .g-box h2{font-size:22.5px;font-weight:900;color:var(--green-dark);margin:6px 0}
+  .g-box p{font-size:14.2px;color:#444;margin-bottom:18px}
+  .g-box p b{color:var(--orange)}
+  .g-box .btn{font-size:18px;padding:18px 36px}
+
+  /* Como receber */
+  .receive{padding:30px 0 33px;text-align:center}
+  .receive h2{font-weight:900;color:var(--green-dark);font-size:27px}
+  .receive h2 span{color:var(--orange)}
+  .receive .lead{font-size:12px;color:var(--muted);margin-bottom:24px}
+  .rc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:954px;margin:0 auto}
+  .rc{background:linear-gradient(180deg,#fff7ee,#fff);border:1px solid #f1e6da;border-radius:12px;padding:15px 9px 18px}
+  .rc .ic{width:42px;height:42px;margin:0 auto 9px;background:#fff;border-radius:10.5px;box-shadow:0 2px 9px rgba(0,0,0,.08);display:grid;place-items:center;font-size:19.5px}
+  .rc h3{font-size:13.5px;font-weight:800;color:var(--green-dark)}
+  .rc p{font-size:10.5px;color:var(--muted)}
+
+  /* FAQ */
+  .faq{background:var(--cream);padding:36px 0 30px;text-align:center}
+  .faq .eyebrow{font-size:9.8px;font-weight:800;color:var(--orange);letter-spacing:1px}
+  .faq h2{font-weight:900;color:var(--green-dark);font-size:27px;margin-bottom:18px}
+  .acc{max-width:627px;margin:0 auto 27px;background:#fff;border-radius:15px;box-shadow:0 6px 21px rgba(0,0,0,.06);overflow:hidden;text-align:left}
+  .acc-item+.acc-item{border-top:1px solid #f0ebe5}
+  .acc-q{width:100%;background:none;border:0;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16.5px 18px;font-size:13.5px;font-weight:700;color:var(--green-dark);cursor:pointer;text-align:left}
+  .acc-q .arr{flex:0 0 24px;height:24px;border-radius:50%;background:#fbefe2;color:#333;display:grid;place-items:center;font-size:12px;transition:transform .3s,background .3s}
+  .acc-item.open .acc-q{color:var(--orange)}
+  .acc-item.open .arr{background:var(--orange);color:#fff;transform:rotate(180deg)}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc-a p{padding:0 18px 18px;font-size:12.8px;color:#444;line-height:1.6}
+  .btn-navy{display:inline-block;background:var(--navy);color:#fff;font-weight:800;text-transform:uppercase;border-radius:12px;padding:18px 30px;font-size:16.5px}
+  .btn-navy:hover{filter:brightness(1.1)}
+
+  /* Footer */
+  footer{background:var(--green-footer);color:#fff;text-align:center;padding:39px 24px 45px}
+  footer strong{font-size:15px;display:block;margin-bottom:9px}
+  footer p{font-size:12.8px;opacity:.9}
+  footer small{display:block;font-size:10.5px;opacity:.7;margin-top:12px}
+
+  /* Escala maior em telas grandes (a página original é renderizada com zoom) */
+  @media (min-width:900px){
+    .benefits .ben-grid{max-width:360px}
+  }
+  @media (max-width:700px){
+    .hero h1{font-size:34px}
+    .prep-grid{grid-template-columns:repeat(2,1fr)}
+    .testi-track img{flex:0 0 78%}
+    .plan-grid{grid-template-columns:1fr}
+    .rc-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .hero h1{font-size:30px}
+    .ben-grid,.fy-grid,.rv-grid{grid-template-columns:1fr}
+    .ben{font-size:12px}
+    .fy{font-size:12px}
+    .card h3{font-size:11px}.card p{font-size:10px}
+    .rv p{font-size:12px}.rv .name{font-size:12px}.rv .date{font-size:10px}
+    .score{gap:16px}
+    .g-box{flex-direction:column;text-align:center}
+    .btn{font-size:16px;padding:16px 26px}
+    .acc-q{font-size:12px}.acc-a p{font-size:11.5px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">⏰ A promoção dessa página acaba no dia 05/10/2026</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1><small>365 Receitas Sem Açúcar,</small> Sem Glúten e Sem Lactose</h1>
+    <p class="sub">receitas práticas para comer bem todos os dias sem abrir mão do prazer à mesa</p>
+    <div class="banner"><img src="https://as365receitascheflu.lovable.app/assets/banner-365-CKMxvwCa.png" alt="365 Receitas Sem Açúcar, Sem Glúten e Sem Lactose"></div>
+    <p class="desc">Bolos, pães, sobremesas, lanches e refeições em versões leves e deliciosas para transformar sua rotina.</p>
+    <a href="#planos" class="btn">Quero as 365 Receitas!</a>
+    <div class="trust"><span>📱 Acesso imediato no WhatsApp</span><span>🔒 Compra 100% Segura</span><span>🛡️ 15 Dias de Garantia Total</span></div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+  <div class="container">
+    <h2 class="grad-title">Benefícios do Produto:</h2>
+    <div class="ben-grid">
+      <div class="ben"><span class="ic">🍰</span>365 receitas doces e salgadas</div>
+      <div class="ben"><span class="ic">🌿</span>Sem açúcar, sem glúten e sem lactose</div>
+      <div class="ben"><span class="ic">📖</span>Receitas simples e ilustradas</div>
+      <div class="ben"><span class="ic">🍽️</span>Café, almoço, jantar e sobremesa</div>
+      <div class="ben"><span class="ic">🪶</span>Mais leveza sem perder o sabor</div>
+      <div class="ben"><span class="ic">👩‍🍳</span>Fáceis para quem não tem prática</div>
+      <div class="ben"><span class="ic">✨</span>Adeus à mesmice e ao sem graça</div>
+      <div class="ben"><span class="ic">📱</span>Acesso no celular ou impresso</div>
+    </div>
+    <a href="#planos" class="btn btn-sm">Sim, Quero Comer Bem com Mais Leveza</a>
+
+    <div class="slider" id="slider">
+      <div class="slides">
+        <div class="track">
+          <img src="https://i.imgur.com/54fZgju.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 1">
+          <img src="https://i.imgur.com/JCYrYsk.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 2">
+          <img src="https://i.imgur.com/BWTdeN8.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 3">
+          <img src="https://i.imgur.com/8zjkqxs.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 4">
+        </div>
+      </div>
+      <div class="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="testi">
+  <div class="container">
+    <h2>Veja o que estão dizendo das receitas:</h2>
+    <div class="testi-box">
+      <div class="testi-track">
+        <img src="https://i.imgur.com/c9fOqG0.png" alt="Depoimento 1">
+        <img src="https://i.imgur.com/1KLUKCZ.png" alt="Depoimento 2">
+        <img src="https://i.imgur.com/ag5ojSh.png" alt="Depoimento 3">
+        <img src="https://i.imgur.com/FHc94su.png" alt="Depoimento 4">
+      </div>
+      <p class="swipe">👈 Arraste para ver mais depoimentos 👉</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VAI PREPARAR -->
+<section class="prepare">
+  <div class="container">
+    <h2>VEJA O QUE VOCÊ VAI PREPARAR:</h2>
+    <div class="prep-grid">
+      <div class="card"><img src="https://i.imgur.com/9XqdBay.png" alt="BOLO DE CENOURA COM COBERTURA CREMOSA"><h3>BOLO DE CENOURA COM COBERTURA CREMOSA</h3><p>Fofinho, doce na medida e sem açúcar refinado</p></div>
+      <div class="card"><img src="https://i.imgur.com/1yPajyN.png" alt="PÃO CASEIRO SEM GLÚTEN"><h3>PÃO CASEIRO SEM GLÚTEN</h3><p>Macio, simples e perfeito para o café da manhã</p></div>
+      <div class="card"><img src="https://i.imgur.com/cY8OF7l.png" alt="PANQUECA LEVE DE BANANA"><h3>PANQUECA LEVE DE BANANA</h3><p>Rápida, nutritiva e sem lactose</p></div>
+      <div class="card"><img src="https://i.ibb.co/ynNxVxN0/Lasanha-vegan-Made-by-Choices.webp" alt="LASANHA CREMOSA SEM GLÚTEN"><h3>LASANHA CREMOSA SEM GLÚTEN</h3><p>Confortável, saborosa e perfeita para a família</p></div>
+      <div class="card"><img src="https://i.imgur.com/wS19SoM.png" alt="BRIGADEIRO SEM AÇÚCAR"><h3>BRIGADEIRO SEM AÇÚCAR</h3><p>Cremoso, chocolatudo e sem culpa</p></div>
+      <div class="card"><img src="https://i.imgur.com/tql5cat.png" alt="TORTA SALGADA DE FRANGO"><h3>TORTA SALGADA DE FRANGO</h3><p>Prática, leve e ótima para qualquer refeição</p></div>
+      <div class="card"><img src="https://i.ibb.co/8g3T7TDc/Small-Batch-Brownies-Eats-Delightful.webp" alt="BROWNIE FIT DE CHOCOLATE"><h3>BROWNIE FIT DE CHOCOLATE</h3><p>Úmido, intenso e sem farinha de trigo</p></div>
+      <div class="card"><img src="https://i.ibb.co/WNVfYtVy/Cookies-Veganos-com-peda-os-de-Chocolate-Cozinha-Roman.webp" alt="COOKIE CROCANTE SEM GLÚTEN"><h3>COOKIE CROCANTE SEM GLÚTEN</h3><p>Crocante por fora, macio por dentro</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- +357 -->
+<section class="more">
+  <div class="container">
+    <div class="more-box">
+      <h2>+ 357 OUTRAS receitas incríveis da Chef Luana!</h2>
+      <img class="showcase" src="https://as365receitascheflu.lovable.app/assets/recipes-showcase-BTlQkkvt.png" alt="Mosaico com prévia das 357 receitas extras da Chef Luana">
+      <p class="lead">Divididas em categorias completas:</p>
+      <div class="pills">
+        <span class="pill">Café da Manhã Leve (50 receitas)</span>
+        <span class="pill">Pães, Bolos e Massas Sem Glúten (55 receitas)</span>
+        <span class="pill">Almoços e Jantares Práticos (70 receitas)</span>
+        <span class="pill">Lanches e Salgados Saudáveis (50 receitas)</span>
+        <span class="pill">Sobremesas Sem Açúcar (65 receitas)</span>
+        <span class="pill">Receitas Sem Lactose Cremosas (35 receitas)</span>
+        <span class="pill">Molhos, Cremes e Acompanhamentos (25 receitas)</span>
+        <span class="pill">Bebidas, Vitaminas e Extras (15 receitas)</span>
+      </div>
+      <a href="#planos" class="btn btn-sm">Quero Todas as 365 Receitas</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARA VOCÊ -->
+<section class="foryou">
+  <div class="container">
+    <h2>Este cardápio é perfeito para você que:</h2>
+    <div class="fy-grid">
+      <div class="fy"><span class="chk">✓</span>Quer comer melhor sem viver de comida sem graça</div>
+      <div class="fy"><span class="chk">✓</span>Sente que açúcar, glúten ou lactose pesam na sua rotina</div>
+      <div class="fy"><span class="chk">✓</span>Quer preparar receitas leves, bonitas e saborosas em casa</div>
+      <div class="fy"><span class="chk">✓</span>Cansou de procurar opções diferentes e nunca saber o que fazer</div>
+      <div class="fy"><span class="chk">✓</span>Precisa de ideias rápidas para o café, almoço, jantar e sobremesa</div>
+      <div class="fy"><span class="chk">✓</span>Quer agradar a família mesmo fazendo receitas mais equilibradas</div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="bonus">
+  <div class="container">
+    <span class="badge">🎁 Presente Especial</span>
+    <h2>COMPRE AGORA E RECEBA <span>+ 3 bônus exclusivos:</span></h2>
+    <div class="bonus-list">
+      <div class="b-item"><span class="tag">BÔNUS 1</span><div class="thumb"><img src="https://as365receitascheflu.lovable.app/assets/bonus-shopping-list-Dj0IVq6V.webp" alt="Lista de compras para receitas sem açúcar, sem glúten e sem lactose"></div><div class="info"><h3>Lista de Compras Essenciais</h3><p>Ingredientes certos para montar sua despensa sem erro.</p><div class="price-row"><s>R$ 29,90</s><span class="free">✓ Grátis Hoje</span></div></div></div>
+      <div class="b-item"><span class="tag">BÔNUS 2</span><div class="thumb"><img src="https://as365receitascheflu.lovable.app/assets/bonus-meal-plan-BV1Ak_t-.webp" alt="Cardápio de 30 dias com refeições leves e práticas"></div><div class="info"><h3>Cardápio de 30 Dias</h3><p>Ideias prontas para variar suas refeições o mês inteiro.</p><div class="price-row"><s>R$ 39,90</s><span class="free">✓ Grátis Hoje</span></div></div></div>
+      <div class="b-item"><span class="tag">BÔNUS 3</span><div class="thumb"><img src="https://as365receitascheflu.lovable.app/assets/bonus-substitutions-C9BdG-Ul.webp" alt="Guia de substituições para açúcar, glúten e lactose"></div><div class="info"><h3>Guia de Substituições</h3><p>Trocas simples para manter sabor, textura e cremosidade.</p><div class="price-row"><s>R$ 24,90</s><span class="free">✓ Grátis Hoje</span></div></div></div>
+    </div>
+    <div class="total">💚 VALOR TOTAL DOS BÔNUS → TUDO GRÁTIS HOJE!</div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="plans" id="planos">
+  <div class="container">
+    <h2>Escolha seu plano</h2>
+    <p class="lead">Oferta especial por tempo limitado · Acesso imediato</p>
+    <div class="plan-grid">
+      <div class="plan">
+        <span class="chip basic">⚡ Oferta Básica</span>
+        <h3>+365 Receitas Completas</h3>
+        <ul>
+          <li>365 Receitas Sem Açúcar, Glúten e Lactose</li>
+          <li>Acesso Vitalício</li>
+          <li>Entrega Imediata por E-mail</li>
+        </ul>
+        <div class="bottom">
+          <div class="from">De R$ 97,00 por apenas</div>
+          <div class="price">R$ 10</div>
+          <a href="https://pay.wiapy.com/Ci6of1B5M1ll" class="btn">Comprar Agora</a>
+        </div>
+      </div>
+      <div class="plan premium">
+        <span class="ribbon">Mais Vendida</span>
+        <span class="chip super">🔥 Super Oferta</span>
+        <h3>+500 Receitas Premium</h3>
+        <ul>
+          <li>500 Receitas Sem Açúcar, Glúten e Lactose</li>
+          <li>Sobremesas, Pães, Bolos e Massas</li>
+          <li>Receitas Cremosas Sem Lactose</li>
+          <li>Acesso Vitalício</li>
+          <li>Entrega Imediata por E-mail</li>
+        </ul>
+        <div class="bx-title">Bônus Exclusivos!</div>
+        <ul class="gifts">
+          <li>Cardápio de 30 Dias com Refeições Leves</li>
+          <li>Guia de Substituições Inteligentes</li>
+          <li>Lista de Compras Essenciais</li>
+        </ul>
+        <div class="bottom">
+          <div class="from">De R$ 197,00 por apenas</div>
+          <div class="price">R$ 18</div>
+          <a href="https://pay.wiapy.com/3IdUSNfye7KS" class="btn">Comprar Agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plans-note">📲 Acesso imediato após a compra · Oferta válida até 05/10/2026</div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section class="reviews">
+  <div class="container">
+    <h2>3.500+ PESSOAS JÁ <span>TRANSFORMARAM</span> SUA ROTINA NA COZINHA</h2>
+    <p class="lead">Veja o que quem já comprou está falando.</p>
+    <div class="score">
+      <div class="big"><b>4.9</b><div class="stars">★★★★★</div><small>3.541 avaliações</small></div>
+      <div class="bars">
+        <div class="bar">5<div class="line"><div class="fill" style="width:96%"></div></div></div>
+        <div class="bar">4<div class="line"><div class="fill" style="width:28%"></div></div></div>
+        <div class="bar">3<div class="line"><div class="fill" style="width:8%"></div></div></div>
+        <div class="bar">2<div class="line"><div class="fill" style="width:4%"></div></div></div>
+        <div class="bar">1<div class="line"><div class="fill" style="width:2%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="rv-grid">
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#ef4444">AM</span><div><div class="name">Ana M.</div><div class="date">12 de março de 2025</div></div></div><p>Eu achava que receita sem açúcar ficava sem graça, mas o bolo de cenoura me surpreendeu. Ficou fofinho e todo mundo aqui em casa comeu sem perceber diferença.</p><img src="https://i.imgur.com/UY37i9U.png" alt="Receita"><div class="actions"><span>🤍 Curtir 34</span><span>💬 Comentar</span></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#10b981">JS</span><div><div class="name">Juliana S.</div><div class="date">3 de abril de 2025</div></div></div><p>Comprei por causa das sobremesas e já fiz brownie, brigadeiro e panqueca. Tudo simples e gostoso. Agora tenho opção quando bate vontade de doce.</p><img src="https://as365receitascheflu.lovable.app/assets/review-brownie-kvuvOXFY.jpg" alt="Receita"><div class="actions"><span>🤍 Curtir 28</span><span>💬 Comentar</span></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#a855f7">CF</span><div><div class="name">Camila F.</div><div class="date">28 de março de 2025</div></div></div><p>Eu sempre ficava meio pesada depois de comer pão e massa. As versões sem glúten do livro me ajudaram muito a variar o café da manhã e os lanches.</p><img src="https://i.imgur.com/3xXF7tP.png" alt="Receita"><div class="actions"><span>🤍 Curtir 51</span><span>💬 Comentar</span></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#f97316">PR</span><div><div class="name">Patricia R.</div><div class="date">18 de fevereiro de 2025</div></div></div><p>Minha filha tem restrição com lactose e eu vivia sem ideia do que fazer. Agora consigo preparar bolo, torta e até receitas cremosas que ela ama.</p><img src="https://i.imgur.com/z8Xaea1.png" alt="Receita"><div class="actions"><span>🤍 Curtir 62</span><span>💬 Comentar</span></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#0ea5e9">RB</span><div><div class="name">Renata B.</div><div class="date">5 de abril de 2025</div></div></div><p>As receitas são bem explicadas e não pedem ingredientes impossíveis. Fiz a torta salgada e virou receita fixa aqui em casa.</p><img src="https://i.imgur.com/Hfbl72C.png" alt="Receita"><div class="actions"><span>🤍 Curtir 47</span><span>💬 Comentar</span></div></div>
+      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#db2777">LC</span><div><div class="name">Larissa C.</div><div class="date">21 de março de 2025</div></div></div><p>Os cookies sem glúten ficaram perfeitos. Crocantes por fora, macios por dentro. Meu marido nem acreditou que eram sem açúcar refinado.</p><img src="https://i.imgur.com/zGqQ3BH.png" alt="Receita"><div class="actions"><span>🤍 Curtir 39</span><span>💬 Comentar</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="guarantee">
+  <div class="container">
+    <div class="g-box">
+      <img src="https://i.imgur.com/JkRnpY1.png" alt="Selo de garantia">
+      <div>
+        <span class="g-chip">🛡️ Risco Zero</span>
+        <h2>Garantia Incondicional de 15 Dias</h2>
+        <p>Teste as receitas por 15 dias. Se não ficar 100% satisfeito(a), devolvemos <b>todo o seu dinheiro</b>, sem perguntas.</p>
+        <a href="#planos" class="btn">Quero comprar com segurança</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO RECEBER -->
+<section class="receive">
+  <div class="container">
+    <h2>Como você vai <span>RECEBER:</span></h2>
+    <p class="lead">Acesso liberado na hora, do seu jeitinho ✨</p>
+    <div class="rc-grid">
+      <div class="rc"><div class="ic">📱</div><h3>No Celular</h3><p>Acesse onde estiver</p></div>
+      <div class="rc"><div class="ic">💻</div><h3>No Computador</h3><p>Tela grande pra cozinhar</p></div>
+      <div class="rc"><div class="ic">🖨️</div><h3>Para Imprimir</h3><p>Seu caderno de receitas</p></div>
+      <div class="rc"><div class="ic">⚡</div><h3>Envio Imediato</h3><p>Liberado em segundos</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2>Dúvidas Frequentes</h2>
+    <div class="acc">
+      <div class="acc-item open"><button class="acc-q">As receitas ficam gostosas de verdade?<span class="arr">⌄</span></button><div class="acc-a"><p>Sim. As receitas foram pensadas para manter sabor, textura e aparência de comida comum, mas em versões sem açúcar, sem glúten e sem lactose. A ideia é comer melhor sem sentir que está em uma dieta sem graça.</p></div></div>
+      <div class="acc-item"><button class="acc-q">São receitas saudáveis de verdade?<span class="arr">⌄</span></button><div class="acc-a"><p>São receitas mais leves e equilibradas, feitas para quem quer reduzir açúcar, glúten e lactose no dia a dia. Ainda assim, o foco é praticidade e sabor, com opções para diferentes momentos da rotina.</p></div></div>
+      <div class="acc-item"><button class="acc-q">Preciso comprar ingredientes caros ou difíceis?<span class="arr">⌄</span></button><div class="acc-a"><p>Não. A maior parte das receitas usa ingredientes acessíveis e fáceis de encontrar em mercados comuns. O objetivo é facilitar sua vida, não complicar.</p></div></div>
+      <div class="acc-item"><button class="acc-q">As receitas servem para a família toda?<span class="arr">⌄</span></button><div class="acc-a"><p>Sim. As receitas foram criadas para agradar adultos, crianças e pessoas que querem comer de forma mais leve, mesmo sem ter restrições alimentares.</p></div></div>
+      <div class="acc-item"><button class="acc-q">São receitas simples de fazer?<span class="arr">⌄</span></button><div class="acc-a"><p>Sim. O material foi feito para a cozinha do dia a dia, com passo a passo direto, ingredientes organizados e preparos fáceis de acompanhar.</p></div></div>
+      <div class="acc-item"><button class="acc-q">Preciso saber cozinhar para aproveitar?<span class="arr">⌄</span></button><div class="acc-a"><p>Não. Mesmo quem tem pouca prática consegue acompanhar as receitas, porque o conteúdo é simples, didático e pensado para iniciantes.</p></div></div>
+      <div class="acc-item"><button class="acc-q">Como vou receber o produto?<span class="arr">⌄</span></button><div class="acc-a"><p>Após a compra, você recebe o acesso imediatamente no seu e-mail. Pode abrir pelo celular, computador, tablet ou imprimir se preferir.</p></div></div>
+      <div class="acc-item"><button class="acc-q">E se eu não gostar?<span class="arr">⌄</span></button><div class="acc-a"><p>Você tem 15 dias de garantia incondicional. Se não ficar satisfeito(a), basta solicitar o reembolso dentro do prazo e seu dinheiro será devolvido.</p></div></div>
+      <div class="acc-item"><button class="acc-q">Por quanto tempo tenho acesso?<span class="arr">⌄</span></button><div class="acc-a"><p>O acesso é vitalício. Você compra uma vez e pode consultar as receitas sempre que quiser.</p></div></div>
+    </div>
+    <a href="#planos" class="btn-navy">Ver Oferta</a>
+  </div>
+</section>
+
+<footer>
+  <strong>365 Receitas Sem Açúcar, Sem Glúten e Sem Lactose</strong>
+  <p>© 2026 Todos os direitos reservados.</p>
+  <small>Checkout será configurado posteriormente.</small>
+</footer>
+
+<script>
+  // Carrossel de receitas
+  (function(){
+    var s=document.getElementById('slider'),t=s.querySelector('.track'),n=t.children.length,d=s.querySelector('.dots'),i=0,timer;
+    for(var k=0;k<n;k++){var b=document.createElement('button');b.setAttribute('aria-label','Imagem '+(k+1));b.onclick=(function(k){return function(){go(k);restart()}})(k);d.appendChild(b)}
+    function go(k){i=k;t.style.transform='translateX(-'+(i*100)+'%)';[].forEach.call(d.children,function(el,j){el.classList.toggle('active',j===i)})}
+    function restart(){clearInterval(timer);timer=setInterval(function(){go((i+1)%n)},3000)}
+    go(0);restart();
+  })();
+
+  // FAQ
+  (function(){
+    var items=document.querySelectorAll('.acc-item');
+    function setH(it){var a=it.querySelector('.acc-a');a.style.maxHeight=it.classList.contains('open')?a.scrollHeight+'px':0}
+    items.forEach(function(it){
+      setH(it);
+      it.querySelector('.acc-q').addEventListener('click',function(){
+        var was=it.classList.contains('open');
+        items.forEach(function(o){o.classList.remove('open');setH(o)});
+        if(!was){it.classList.add('open');setH(it)}
+      });
+    });
+    window.addEventListener('resize',function(){items.forEach(setH)});
+  })();
+</script>
+</body>
+</html>
