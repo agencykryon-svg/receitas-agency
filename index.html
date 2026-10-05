@@ -243,7 +243,7 @@
 </head>
 <body>
 
-<div class="topbar">⏰ A promoção dessa página acaba no dia 05/10/2026</div>
+<div class="topbar">⏰ A promoção dessa página acaba <b>hoje</b>, dia <span class="promo-date">05/10/2026</span></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -416,7 +416,7 @@
       </div>
     </div>
   </div>
-  <div class="plans-note">📲 Acesso imediato após a compra · Oferta válida até 05/10/2026</div>
+  <div class="plans-note">📲 Acesso imediato após a compra · Oferta válida até hoje, <span class="promo-date">05/10/2026</span></div>
 </section>
 
 <!-- AVALIAÇÕES -->
@@ -502,6 +502,12 @@
 </footer>
 
 <script>
+  // Data da promoção = sempre o dia de hoje do visitante
+  (function(){
+    var d=new Date(),p=function(n){return (n<10?'0':'')+n};
+    var t=p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();
+    document.querySelectorAll('.promo-date').forEach(function(el){el.textContent=t});
+  })();
   // Carrossel de receitas
   (function(){
     var s=document.getElementById('slider'),t=s.querySelector('.track'),n=t.children.length,d=s.querySelector('.dots'),i=0,timer;
