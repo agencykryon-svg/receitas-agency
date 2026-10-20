@@ -90,6 +90,36 @@
   .card h3{font-size:14.2px;font-weight:800;color:var(--green-dark);padding:18px 15px 6px;line-height:1.3}
   .card p{font-size:12.8px;color:var(--muted);padding:0 18px 21px;line-height:1.35}
 
+
+  /* Na cozinha com a Nutri */
+  .cook{background:linear-gradient(180deg,#fff4f1 0%,#ffe9e4 100%);padding:48px 0;overflow:hidden}
+  .cook-grid,.real-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;max-width:1000px;margin:0 auto}
+  .cook-kick{display:inline-block;background:#fff;color:#d9485f;font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 14px;border-radius:99px;box-shadow:0 4px 14px rgba(217,72,95,.15)}
+  .cook h2,.real h2{font-family:'Poppins',sans-serif;font-weight:900;font-size:36px;line-height:1.12;color:#4a2c1d;margin:16px 0 14px}
+  .cook h2 em,.real h2 em{font-style:normal;color:#d9485f}
+  .cook p,.real p{font-size:16px;color:#5c4a42;margin-bottom:12px}
+  .cook .btn{margin-top:10px}
+  .phone{position:relative;justify-self:center;width:300px;aspect-ratio:9/16;border-radius:38px;padding:10px;background:#1c1414;box-shadow:0 30px 60px rgba(150,40,60,.28),0 0 0 6px #f6c9cf;transform:rotate(2deg)}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:30px;display:block;background:#000}
+  .phone .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:78px;border:0;border-radius:50%;background:rgba(217,72,95,.92);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 0 0 10px rgba(255,255,255,.35)}
+  .phone .play svg{width:34px;height:34px;margin-left:4px}
+  .phone.on .play,.phone.on .ph-tag{display:none}
+  .phone .ph-tag{position:absolute;left:22px;right:22px;bottom:24px;background:rgba(255,255,255,.92);color:#4a2c1d;font-weight:700;font-size:12px;text-align:center;padding:8px 10px;border-radius:99px}
+  .real{background:#fff;padding:48px 0}
+  .real-grid{grid-template-columns:.85fr 1.15fr}
+  .ig-mock{width:100%;max-width:360px;height:auto;justify-self:center;filter:drop-shadow(0 24px 40px rgba(0,0,0,.18))}
+  .real-list{list-style:none;margin:6px 0 20px;display:grid;gap:8px;font-size:15px;font-weight:600;color:#4a2c1d}
+  .ig-btn{display:inline-block;background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af);color:#fff;font-weight:800;padding:15px 24px;border-radius:14px;box-shadow:0 10px 24px rgba(221,42,123,.3)}
+  .g-seal{flex:none;width:120px;height:120px;border-radius:50%;background:var(--green-btn);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff,0 0 0 9px var(--green-btn);text-align:center}
+  .g-seal b{font-size:42px;line-height:1;font-weight:900}.g-seal span{font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1.15}
+  @media (max-width:760px){
+    .cook-grid,.real-grid{grid-template-columns:1fr;gap:28px;text-align:center}
+    .cook h2,.real h2{font-size:28px}
+    .phone{width:250px;transform:none}
+    .real-list{justify-items:center}
+    .ig-mock{max-width:300px}
+  }
+
   /* +357 */
   .more{background:var(--gray-bg);padding:30px 0}
   .more-box{background:var(--green-dark);border-radius:24px;max-width:954px;margin:0 auto;padding:45px 36px 51px;color:#fff;text-align:center;box-shadow:0 18px 45px rgba(0,0,0,.18)}
@@ -295,32 +325,41 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
     </div>
     <a href="#planos" class="btn btn-sm">Sim, Quero Comer Bem com Mais Leveza</a>
 
-    <div class="slider" id="slider">
-      <div class="slides">
-        <div class="track">
-          <img src="https://i.imgur.com/54fZgju.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 1">
-          <img src="https://i.imgur.com/JCYrYsk.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 2">
-          <img src="https://i.imgur.com/BWTdeN8.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 3">
-          <img src="https://i.imgur.com/8zjkqxs.png" alt="Receita leve sem açúcar, sem glúten e sem lactose 4">
-        </div>
-      </div>
-      <div class="dots"></div>
+  </div>
+</section>
+
+<!-- NA COZINHA COM A NUTRI -->
+<section class="cook">
+  <div class="container cook-grid">
+    <div class="cook-txt">
+      <span class="cook-kick">💕 Na cozinha com a Nutri</span>
+      <h2>Vem pra cozinha <em>comigo!</em></h2>
+      <p>Eu sou a Cláudia, nutricionista, e cozinho de verdade no meu dia a dia. Nada de receita complicada: é ingrediente simples, frigideira no fogo e comida gostosa no prato.</p>
+      <p>Dá o play e vem ver um pedacinho da minha rotina na cozinha. 🥞</p>
+      <a href="#planos" class="btn btn-sm">Quero cozinhar com a Nutri</a>
+    </div>
+    <div class="phone" id="cookPhone">
+      <video id="cookVid" src="vid/claudia-cozinha.mp4" poster="vid/claudia-cozinha.jpg" playsinline preload="none"></video>
+      <button class="play" aria-label="Assistir vídeo da Cláudia"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button>
+      <span class="ph-tag">Cláudia Martins · Nutricionista</span>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="testi">
-  <div class="container">
-    <h2>Veja o que estão dizendo das receitas:</h2>
-    <div class="testi-box">
-      <div class="testi-track">
-        <img src="https://i.imgur.com/c9fOqG0.png" alt="Depoimento 1">
-        <img src="https://i.imgur.com/1KLUKCZ.png" alt="Depoimento 2">
-        <img src="https://i.imgur.com/ag5ojSh.png" alt="Depoimento 3">
-        <img src="https://i.imgur.com/FHc94su.png" alt="Depoimento 4">
-      </div>
-      <p class="swipe">👈 Arraste para ver mais depoimentos 👉</p>
+<!-- ELA É REAL -->
+<section class="real">
+  <div class="container real-grid">
+    <img class="ig-mock" src="img/instagram-claudia.webp" width="800" height="1067" loading="lazy" alt="Perfil do Instagram da nutricionista Cláudia Martins (@claudiagmartinsnutri)">
+    <div class="real-txt">
+      <span class="cook-kick">✨ Quem está por trás das receitas</span>
+      <h2>Uma nutricionista <em>de verdade</em>, que você pode conhecer</h2>
+      <p>As receitas foram criadas pela <b>Cláudia Martins</b>, nutricionista que compartilha no Instagram a rotina dela e dicas de alimentação leve e equilibrada.</p>
+      <ul class="real-list">
+        <li>✔️ Perfil verificado no Instagram</li>
+        <li>✔️ +28 mil seguidores acompanhando a rotina dela</li>
+        <li>✔️ Mais de 400 publicações no perfil</li>
+      </ul>
+      <a class="ig-btn" href="https://www.instagram.com/claudiagmartinsnutri/" target="_blank" rel="noopener">Ver o Instagram da Cláudia →</a>
     </div>
   </div>
 </section>
@@ -330,14 +369,10 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
   <div class="container">
     <h2>VEJA O QUE VOCÊ VAI PREPARAR:</h2>
     <div class="prep-grid">
-      <div class="card"><img src="https://i.imgur.com/9XqdBay.png" alt="BOLO DE CENOURA COM COBERTURA CREMOSA"><h3>BOLO DE CENOURA COM COBERTURA CREMOSA</h3><p>Fofinho, doce na medida e sem açúcar refinado</p></div>
-      <div class="card"><img src="https://i.imgur.com/1yPajyN.png" alt="PÃO CASEIRO SEM GLÚTEN"><h3>PÃO CASEIRO SEM GLÚTEN</h3><p>Macio, simples e perfeito para o café da manhã</p></div>
-      <div class="card"><img src="https://i.imgur.com/cY8OF7l.png" alt="PANQUECA LEVE DE BANANA"><h3>PANQUECA LEVE DE BANANA</h3><p>Rápida, nutritiva e sem lactose</p></div>
-      <div class="card"><img src="https://i.ibb.co/ynNxVxN0/Lasanha-vegan-Made-by-Choices.webp" alt="LASANHA CREMOSA SEM GLÚTEN"><h3>LASANHA CREMOSA SEM GLÚTEN</h3><p>Confortável, saborosa e perfeita para a família</p></div>
-      <div class="card"><img src="https://i.imgur.com/wS19SoM.png" alt="BRIGADEIRO SEM AÇÚCAR"><h3>BRIGADEIRO SEM AÇÚCAR</h3><p>Cremoso, chocolatudo e sem culpa</p></div>
-      <div class="card"><img src="https://i.imgur.com/tql5cat.png" alt="TORTA SALGADA DE FRANGO"><h3>TORTA SALGADA DE FRANGO</h3><p>Prática, leve e ótima para qualquer refeição</p></div>
-      <div class="card"><img src="https://i.ibb.co/8g3T7TDc/Small-Batch-Brownies-Eats-Delightful.webp" alt="BROWNIE FIT DE CHOCOLATE"><h3>BROWNIE FIT DE CHOCOLATE</h3><p>Úmido, intenso e sem farinha de trigo</p></div>
-      <div class="card"><img src="https://i.ibb.co/WNVfYtVy/Cookies-Veganos-com-peda-os-de-Chocolate-Cozinha-Roman.webp" alt="COOKIE CROCANTE SEM GLÚTEN"><h3>COOKIE CROCANTE SEM GLÚTEN</h3><p>Crocante por fora, macio por dentro</p></div>
+      <div class="card"><img src="img/prep-panqueca.jpg" loading="lazy" alt="Panqueca de banana"><h3>PANQUECA DE BANANA</h3><p>Só banana, ovo e farinha de arroz: doce na medida, sem açúcar</p></div>
+      <div class="card"><img src="img/prep-bolo.jpg" loading="lazy" alt="Bolo de chocolate"><h3>BOLO DE CHOCOLATE FOFINHO</h3><p>Com cacau 100%, sem trigo e sem leite</p></div>
+      <div class="card"><img src="img/prep-paodequeijo.jpg" loading="lazy" alt="Pão de queijo"><h3>PÃO DE QUEIJO VEGANO</h3><p>Sequinho por fora e macio por dentro, sem lactose</p></div>
+      <div class="card"><img src="img/prep-lasanha.jpg" loading="lazy" alt="Lasanha sem glúten"><h3>LASANHAS SEM GLÚTEN</h3><p>De berinjela ou de legumes, para a família toda</p></div>
     </div>
   </div>
 </section>
@@ -446,38 +481,11 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
   <div class="plans-note">📲 Acesso imediato após a compra · Oferta válida até <span class="promo-date">05/10/2026</span></div>
 </section>
 
-<!-- AVALIAÇÕES -->
-<section class="reviews">
-  <div class="container">
-    <h2>3.500+ PESSOAS JÁ <span>TRANSFORMARAM</span> SUA ROTINA NA COZINHA</h2>
-    <p class="lead">Veja o que quem já comprou está falando.</p>
-    <div class="score">
-      <div class="big"><b>4.9</b><div class="stars">★★★★★</div><small>3.541 avaliações</small></div>
-      <div class="bars">
-        <div class="bar">5<div class="line"><div class="fill" style="width:96%"></div></div></div>
-        <div class="bar">4<div class="line"><div class="fill" style="width:28%"></div></div></div>
-        <div class="bar">3<div class="line"><div class="fill" style="width:8%"></div></div></div>
-        <div class="bar">2<div class="line"><div class="fill" style="width:4%"></div></div></div>
-        <div class="bar">1<div class="line"><div class="fill" style="width:2%"></div></div></div>
-      </div>
-    </div>
-
-    <div class="rv-grid">
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#ef4444">AM</span><div><div class="name">Ana M.</div><div class="date">12 de março de 2025</div></div></div><p>Eu achava que receita sem açúcar ficava sem graça, mas o bolo de cenoura me surpreendeu. Ficou fofinho e todo mundo aqui em casa comeu sem perceber diferença.</p><img src="https://i.imgur.com/UY37i9U.png" alt="Receita"><div class="actions"><span>🤍 Curtir 34</span><span>💬 Comentar</span></div></div>
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#10b981">JS</span><div><div class="name">Juliana S.</div><div class="date">3 de abril de 2025</div></div></div><p>Comprei por causa das sobremesas e já fiz brownie, brigadeiro e panqueca. Tudo simples e gostoso. Agora tenho opção quando bate vontade de doce.</p><img src="https://as365receitascheflu.lovable.app/assets/review-brownie-kvuvOXFY.jpg" alt="Receita"><div class="actions"><span>🤍 Curtir 28</span><span>💬 Comentar</span></div></div>
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#a855f7">CF</span><div><div class="name">Camila F.</div><div class="date">28 de março de 2025</div></div></div><p>Eu sempre ficava meio pesada depois de comer pão e massa. As versões sem glúten do livro me ajudaram muito a variar o café da manhã e os lanches.</p><img src="https://i.imgur.com/3xXF7tP.png" alt="Receita"><div class="actions"><span>🤍 Curtir 51</span><span>💬 Comentar</span></div></div>
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#f97316">PR</span><div><div class="name">Patricia R.</div><div class="date">18 de fevereiro de 2025</div></div></div><p>Minha filha tem restrição com lactose e eu vivia sem ideia do que fazer. Agora consigo preparar bolo, torta e até receitas cremosas que ela ama.</p><img src="https://i.imgur.com/z8Xaea1.png" alt="Receita"><div class="actions"><span>🤍 Curtir 62</span><span>💬 Comentar</span></div></div>
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#0ea5e9">RB</span><div><div class="name">Renata B.</div><div class="date">5 de abril de 2025</div></div></div><p>As receitas são bem explicadas e não pedem ingredientes impossíveis. Fiz a torta salgada e virou receita fixa aqui em casa.</p><img src="https://i.imgur.com/Hfbl72C.png" alt="Receita"><div class="actions"><span>🤍 Curtir 47</span><span>💬 Comentar</span></div></div>
-      <div class="rv"><div class="stars">★★★★★</div><div class="head"><span class="av" style="background:#db2777">LC</span><div><div class="name">Larissa C.</div><div class="date">21 de março de 2025</div></div></div><p>Os cookies sem glúten ficaram perfeitos. Crocantes por fora, macios por dentro. Meu marido nem acreditou que eram sem açúcar refinado.</p><img src="https://i.imgur.com/zGqQ3BH.png" alt="Receita"><div class="actions"><span>🤍 Curtir 39</span><span>💬 Comentar</span></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- GARANTIA -->
 <section class="guarantee">
   <div class="container">
     <div class="g-box">
-      <img src="https://i.imgur.com/JkRnpY1.png" alt="Selo de garantia">
+      <div class="g-seal"><b>15</b><span>DIAS DE<br>GARANTIA</span></div>
       <div>
         <span class="g-chip">🛡️ Risco Zero</span>
         <h2>Garantia Incondicional de 15 Dias</h2>
@@ -535,9 +543,13 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
     var t=p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();
     document.querySelectorAll('.promo-date').forEach(function(el){el.textContent=t});
   })();
+
+  // vídeo da Cláudia
+  (function(){var p=document.getElementById('cookPhone');if(!p)return;var v=document.getElementById('cookVid');
+    p.querySelector('.play').addEventListener('click',function(){p.classList.add('on');v.controls=true;v.play();});})();
   // Carrossel de receitas
   (function(){
-    var s=document.getElementById('slider'),t=s.querySelector('.track'),n=t.children.length,d=s.querySelector('.dots'),i=0,timer;
+    var s=document.getElementById('slider');if(!s)return;var t=s.querySelector('.track'),n=t.children.length,d=s.querySelector('.dots'),i=0,timer;
     for(var k=0;k<n;k++){var b=document.createElement('button');b.setAttribute('aria-label','Imagem '+(k+1));b.onclick=(function(k){return function(){go(k);restart()}})(k);d.appendChild(b)}
     function go(k){i=k;t.style.transform='translateX(-'+(i*100)+'%)';[].forEach.call(d.children,function(el,j){el.classList.toggle('active',j===i)})}
     function restart(){clearInterval(timer);timer=setInterval(function(){go((i+1)%n)},3000)}
