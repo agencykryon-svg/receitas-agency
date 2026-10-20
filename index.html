@@ -2,7 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#356b57">
+<meta name="format-detection" content="telephone=no">
+<link rel="preload" as="image" href="img/banner-475b.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://i.imgur.com">
 <title>475 Receitas da Nutri: Sem Açúcar, Sem Glúten e Sem Lactose | Cláudia Martins Nutricionista</title>
 <meta name="description" content="475 receitas práticas e saborosas sem açúcar, sem glúten e sem lactose. Acesso imediato. Garantia de 15 dias.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -276,6 +280,46 @@
     .btn{font-size:16px;padding:16px 26px}
     .acc-q{font-size:12px}.acc-a p{font-size:11.5px}
   }
+
+  /* ===== Otimização mobile / iPhone ===== */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom)}
+  img,video{max-width:100%;height:auto}
+  .btn,.acc-q,a{touch-action:manipulation}
+  .sticky-cta{display:none}
+  @media (max-width:520px){
+    .container{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+    .topbar{font-size:14.5px;padding:10px 14px}
+    .hero .sub{font-size:17px;margin:14px auto 12px}
+    .hero .desc{font-size:16px}
+    .trust{gap:6px 14px;font-size:13px;margin-top:18px}
+    .grad-title{font-size:28px}
+    .ben{font-size:13.5px}
+    .fy{font-size:13.5px}
+    .prepare h2{font-size:27px;margin-bottom:22px}
+    .prep-grid{gap:12px}
+    .card h3{font-size:12.5px;padding:12px 10px 4px}.card p{font-size:11.5px;padding:0 10px 14px}
+    .more-box{padding:30px 16px 34px}.more-box h2{font-size:24px}
+    .pill{font-size:13px;padding:7px 14px}
+    .foryou h2{font-size:24px}
+    .bonus h2{font-size:28px;margin-bottom:26px}
+    .b-item h3{font-size:16px}.b-item p{font-size:13px}
+    .price-row{flex-wrap:wrap;gap:6px}
+    .total{font-size:15px;padding:15px}
+    .plans h2{font-size:28px}.plans .lead{margin-bottom:26px}
+    .plan{padding:28px 18px 24px}
+    .plan ul{font-size:14px}
+    .plan .price{font-size:50px}
+    .plan .btn{max-width:100%}
+    .btn{min-height:52px;font-size:16px;padding:16px 22px;width:100%;max-width:340px}
+    .acc-q{font-size:13.5px;min-height:52px}.acc-a p{font-size:13.5px;line-height:1.55}
+    .chef-note blockquote{font-size:15.5px}
+    .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 -8px 24px rgba(0,0,0,.12);transform:translateY(120%);transition:transform .35s ease}
+    .sticky-cta.show{transform:none}
+    .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:14px;background:var(--green-btn);color:#fff;font-weight:800;font-size:15.5px;text-transform:uppercase;box-shadow:0 8px 20px rgba(22,163,74,.3)}
+    .sticky-cta small{display:block;font-size:11px;font-weight:600;text-transform:none;opacity:.9}
+    footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))!important}
+  }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <!-- Meta Pixel Code -->
@@ -305,10 +349,10 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
   <div class="container">
     <h1><small>475 Receitas Sem Açúcar,</small> Sem Glúten e Sem Lactose</h1>
     <p class="sub">receitas práticas para comer bem todos os dias sem abrir mão do prazer à mesa</p>
-    <div class="banner"><img src="img/banner-475b.jpg" width="1200" height="896" alt="475 Receitas Sem Açúcar, Sem Glúten e Sem Lactose - Cláudia Martins Nutricionista"></div>
+    <div class="banner"><img src="img/banner-475b.jpg" width="1200" height="896" fetchpriority="high" decoding="async" alt="475 Receitas Sem Açúcar, Sem Glúten e Sem Lactose - Cláudia Martins Nutricionista"></div>
     <p class="desc">Bolos, pães, sobremesas, lanches e refeições em versões leves e deliciosas para transformar sua rotina.</p>
     <a href="#planos" class="btn">Quero as 475 Receitas!</a>
-    <div class="trust"><span>📱 Acesso imediato no WhatsApp</span><span>🔒 Compra 100% Segura</span><span>🛡️ 15 Dias de Garantia Total</span></div>
+    <div class="trust"><span>📩 Acesso imediato no e-mail</span><span>🔒 Compra 100% Segura</span><span>🛡️ 15 Dias de Garantia Total</span></div>
   </div>
 </section>
 
@@ -372,12 +416,12 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
   <div class="container">
     <h2>VEJA O QUE VOCÊ VAI PREPARAR:</h2>
     <div class="prep-grid">
-      <div class="card"><img src="https://i.imgur.com/9XqdBay.png" alt="BOLO DE CENOURA COM COBERTURA CREMOSA"><h3>BOLO DE CENOURA COM COBERTURA CREMOSA</h3><p>Fofinho, doce na medida e sem açúcar refinado</p></div>
-      <div class="card"><img src="https://i.imgur.com/1yPajyN.png" alt="PÃO CASEIRO SEM GLÚTEN"><h3>PÃO CASEIRO SEM GLÚTEN</h3><p>Macio, simples e perfeito para o café da manhã</p></div>
-      <div class="card"><img src="https://i.imgur.com/cY8OF7l.png" alt="PANQUECA LEVE DE BANANA"><h3>PANQUECA LEVE DE BANANA</h3><p>Rápida, nutritiva e sem lactose</p></div>
+      <div class="card"><img loading="lazy" decoding="async" width="600" height="600" src="https://i.imgur.com/9XqdBay.png" alt="BOLO DE CENOURA COM COBERTURA CREMOSA"><h3>BOLO DE CENOURA COM COBERTURA CREMOSA</h3><p>Fofinho, doce na medida e sem açúcar refinado</p></div>
+      <div class="card"><img loading="lazy" decoding="async" width="600" height="600" src="https://i.imgur.com/1yPajyN.png" alt="PÃO CASEIRO SEM GLÚTEN"><h3>PÃO CASEIRO SEM GLÚTEN</h3><p>Macio, simples e perfeito para o café da manhã</p></div>
+      <div class="card"><img loading="lazy" decoding="async" width="600" height="600" src="https://i.imgur.com/cY8OF7l.png" alt="PANQUECA LEVE DE BANANA"><h3>PANQUECA LEVE DE BANANA</h3><p>Rápida, nutritiva e sem lactose</p></div>
       <div class="card"><img src="img/prep-lasanha.jpg" loading="lazy" alt="Lasanha cremosa sem glúten"><h3>LASANHA CREMOSA SEM GLÚTEN</h3><p>Confortável, saborosa e perfeita para a família</p></div>
-      <div class="card"><img src="https://i.imgur.com/wS19SoM.png" alt="BRIGADEIRO SEM AÇÚCAR"><h3>BRIGADEIRO SEM AÇÚCAR</h3><p>Cremoso, chocolatudo e sem culpa</p></div>
-      <div class="card"><img src="https://i.imgur.com/tql5cat.png" alt="TORTA SALGADA DE FRANGO"><h3>TORTA SALGADA DE FRANGO</h3><p>Prática, leve e ótima para qualquer refeição</p></div>
+      <div class="card"><img loading="lazy" decoding="async" width="600" height="600" src="https://i.imgur.com/wS19SoM.png" alt="BRIGADEIRO SEM AÇÚCAR"><h3>BRIGADEIRO SEM AÇÚCAR</h3><p>Cremoso, chocolatudo e sem culpa</p></div>
+      <div class="card"><img loading="lazy" decoding="async" width="600" height="600" src="https://i.imgur.com/tql5cat.png" alt="TORTA SALGADA DE FRANGO"><h3>TORTA SALGADA DE FRANGO</h3><p>Prática, leve e ótima para qualquer refeição</p></div>
       <div class="card"><img src="img/prep-bolo.jpg" loading="lazy" alt="Bolo de chocolate"><h3>BOLO DE CHOCOLATE FOFINHO</h3><p>Com cacau 100%, sem trigo e sem leite</p></div>
       <div class="card"><img src="img/prep-paodequeijo.jpg" loading="lazy" alt="Pão de queijo vegano"><h3>PÃO DE QUEIJO VEGANO</h3><p>Sequinho por fora e macio por dentro, sem lactose</p></div>
     </div>
@@ -582,6 +626,12 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
 document.addEventListener('click',function(e){var a=e.target.closest('a[href*="pay.cakto.com.br"]');if(a&&window.fbq){fbq('track','InitiateCheckout')}});
 (function(){var q=new URLSearchParams(location.search);if(!q.toString())return;
 document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function(a){try{var u=new URL(a.href);q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}});})();
+</script>
+<div class="sticky-cta" id="stickyCta"><a href="#planos"><span>Quero as receitas<small>A partir de R$ 10 · acesso imediato</small></span></a></div>
+<script>
+(function(){var b=document.getElementById('stickyCta'),p=document.getElementById('planos');if(!b||!p)return;var t=false;
+function u(){var y=window.scrollY,r=p.getBoundingClientRect();var inPlans=r.top<window.innerHeight&&r.bottom>0;b.classList.toggle('show',y>700&&!inPlans);t=false}
+window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u();})();
 </script>
 </body>
 </html>
