@@ -8,13 +8,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Receitas da Nutri">
-<title>620 Receitas da Nutri</title>
+<meta name="apple-mobile-web-app-title" content="Nutri Cláudia">
+<title>620 Receitas da Nutri Cláudia Martins</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#FBF1E3;--card:#fff;--or:#D9622B;--or2:#fbe3d5;--mu:#E8A93A;--ch:#4A2C1D;--tx:#3a2a20;--soft:#8a7365;--line:#eedfcd;--ok:#2f8a4f}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -113,6 +113,25 @@ ol.st li:before{content:counter(s);background:var(--mu);color:#fff;font-weight:8
 .wl .sig{font-size:12px;color:var(--soft);margin-top:14px}
 body.welcome .top,body.welcome .tb{display:none}
 body.welcome{padding-bottom:0}
+.av{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.7);flex:none}
+.hi{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(74,44,29,.06);display:flex}
+.hi img{width:120px;object-fit:cover;object-position:center 20%;flex:none}
+.hi div{padding:14px 14px 14px 16px}
+.hi b{display:block;color:var(--ch);font-size:16px;line-height:1.25;margin-bottom:4px}
+.hi p{font-size:13.5px;color:var(--tx);line-height:1.45}
+.hi .sg{font-family:'Dancing Script','Brush Script MT',cursive;font-size:20px;color:var(--or);margin-top:6px;display:block}
+.tip{display:flex;gap:12px;align-items:flex-start}
+.tip img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--mu)}
+.ab img.ph{width:100%;max-height:420px;object-fit:cover;object-position:center 25%;border-radius:18px;display:block;margin-bottom:14px}
+.ab h2{margin-top:6px}
+.ab .nm{font-size:24px;font-weight:800;color:var(--ch);line-height:1.2}
+.ab .rl{color:var(--or);font-weight:600;margin-bottom:12px}
+.ab p{margin-bottom:10px}
+.igb{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;border-radius:14px;padding:14px;margin:14px 0}
+.cr{font-size:12px;color:var(--soft);text-align:center;margin:18px 0 4px}
+.wl .avw{width:92px;height:92px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 16px rgba(74,44,29,.25);margin:-46px auto 10px;position:relative}
+.wl .msg{background:#fff;border-radius:16px;padding:14px 16px;font-size:14.5px;color:var(--tx);margin-bottom:20px;text-align:left;box-shadow:0 2px 10px rgba(74,44,29,.06)}
+.wl .msg .sg{font-family:'Dancing Script','Brush Script MT',cursive;color:var(--or);font-size:21px;display:block;margin-top:4px}
 .foot{text-align:center;font-size:12px;color:var(--soft);margin:24px 0 8px}
 </style>
 </head>
@@ -124,6 +143,7 @@ body.welcome{padding-bottom:0}
   <a href="#/busca" data-t="busca"><i>🔍</i>Buscar</a>
   <a href="#/cardapio" data-t="cardapio"><i>📅</i>Cardápio</a>
   <a href="#/favoritas" data-t="favoritas"><i>❤️</i>Favoritas</a>
+  <a href="#/claudia" data-t="claudia"><i><img src="claudia-avatar.jpg" alt="" style="width:24px;height:24px;border-radius:50%;object-fit:cover;display:block"></i>Cláudia</a>
 </nav>
 <script src="data.js"></script>
 <script>
@@ -142,20 +162,21 @@ function header(title,back,extra){top.innerHTML=(back?'<a class="bk" href="'+bac
 function tab(t){document.querySelectorAll('#tb a').forEach(function(a){a.classList.toggle('on',a.dataset.t===t)})}
 function item(r){return '<a class="ri" href="#/r/'+r.no+'"><span class="no">nº '+nn(r.no)+'</span><span><b>'+esc(r.n)+'</b><small>'+esc(r.t)+(r.y?' · '+esc(r.y):'')+'</small></span></a>'}
 
+var IG='https://www.instagram.com/claudiagmartinsnutri/';
 var DRIVE='https://drive.google.com/drive/folders/1rMYl3Z55PDxwPSoDU08nkwVQXld_doS7?usp=sharing';
 function isApp(){return window.matchMedia('(display-mode: standalone)').matches||navigator.standalone}
 function seen(){try{return sessionStorage.getItem('w')}catch(e){return 1}}
 function welcome(){
   document.body.classList.add('welcome');
-  app.innerHTML='<div class="wl"><img src="capa.webp" alt="Capa 620 Receitas da Nutri"><h1>Seu acesso às 620 Receitas da Nutri</h1><p>Escolha como prefere acessar. Você pode usar os dois.</p>'+
+  app.innerHTML='<div class="wl"><img src="capa.webp" alt="Capa 620 Receitas da Nutri"><img class="avw" src="claudia-avatar.jpg" alt="Cláudia Martins"><h1>620 Receitas da Nutri<br>Cláudia Martins</h1><div class="msg">Oi! Que bom ter você aqui. Separei estas receitas sem açúcar, sem glúten e sem lactose para deixar o seu dia a dia mais gostoso e prático. Escolha abaixo como quer acessar.<span class="sg">Cláudia Martins</span></div>'+
   '<button class="wb a" id="wa"><i>📱</i><span><b>Usar no aplicativo</b><small>Receitas organizadas, busca, favoritas e bônus no celular</small></span></button>'+
   '<a class="wb d" href="'+DRIVE+'" target="_blank" rel="noopener"><i>📂</i><span><b>Baixar os PDFs</b><small>Livro completo e os 3 bônus no Google Drive</small></span></a>'+
-  '<div class="sig">por Cláudia Martins · Nutricionista</div></div>';
+  '<div class="sig">Cláudia Martins · Nutricionista · @claudiagmartinsnutri</div></div>';
   $('#wa').onclick=function(){try{sessionStorage.setItem('w',1)}catch(e){};document.body.classList.remove('welcome');location.hash='#/';home()};
 }
 function home(){
-  header('620 Receitas da Nutri');tab('home');
-  var h='<div class="hero"><img src="capa.webp" alt=""><div><b>Olá! Que bom ter você aqui.</b><span>620 receitas sem açúcar, sem glúten e sem lactose, separadas por categoria, e 3 bônus.</span></div></div>';
+  header('Receitas da Nutri Cláudia',0,'<a href="#/claudia"><img class="av" src="claudia-avatar.jpg" alt="Cláudia Martins"></a>');tab('home');
+  var h='<a class="hi" href="#/claudia"><img src="claudia-cozinha.jpg" alt="Cláudia Martins na cozinha"><div><b>Bem-vinda à minha cozinha!</b><p>Aqui estão as minhas 620 receitas sem açúcar, sem glúten e sem lactose, separadas por categoria, e os 3 bônus.</p><span class="sg">Cláudia Martins</span></div></a>';
   h+='<a class="search" href="#/busca" style="display:block"><input placeholder="Buscar receita ou ingrediente" readonly tabindex="-1"></a>';
   h+='<h2>Receitas</h2><div class="grid">'+D.cats.map(function(c,i){return '<a class="cat" href="#/c/'+i+'"><i>'+ICON[i]+'</i><b>'+esc(c)+'</b><small>'+byCat[i].length+' receitas</small></a>'}).join('')+'</div>';
   h+='<h2>Bônus</h2><div class="bon">'+
@@ -164,7 +185,8 @@ function home(){
     '<a class="bn" href="#/lista"><i>🛒</i><span><b>Lista de Compras</b><small>Marque o que já tem em casa</small></span></a>'+
     '<a class="bn" href="'+DRIVE+'" target="_blank" rel="noopener"><i>📂</i><span><b>Baixar os PDFs</b><small>Livro e bônus no Google Drive</small></span></a></div>';
   h+='<div class="inst" id="inst"></div>';
-  h+='<p class="foot">por Cláudia Martins · Nutricionista<br>@claudiagmartinsnutri</p>';
+  h+='<a class="igb" href="'+IG+'" target="_blank" rel="noopener">📸 Siga @claudiagmartinsnutri</a>';
+  h+='<p class="foot">© Cláudia Martins · Nutricionista<br>Conteúdo exclusivo para quem comprou o livro</p>';
   app.innerHTML=h; showInstall();
 }
 function cat(i){
@@ -180,12 +202,21 @@ function recipe(no){
   var h='<div class="rt">'+esc(r.n)+'</div><div class="meta"><span>nº '+nn(r.no)+'</span><span>⏱ '+esc(r.t)+'</span>'+(r.y?'<span>🍽 '+esc(r.y)+'</span>':'')+'</div>';
   h+='<div class="box"><h3>Ingredientes</h3>'+r.i.map(function(x,k){return '<button class="ck'+(on.indexOf(k)>=0?' on':'')+'" data-k="'+k+'">'+esc(x)+'</button>'}).join('')+'</div>';
   h+='<div class="box"><h3>Modo de preparo</h3><ol class="st">'+r.m.map(function(x){return '<li><span>'+esc(x)+'</span></li>'}).join('')+'</ol></div>';
-  if(r.d) h+='<div class="tip"><b>Dica da Nutri</b>'+esc(r.d)+'</div>';
+  if(r.d) h+='<div class="tip"><img src="claudia-avatar.jpg" alt=""><div><b>Dica da Nutri Cláudia</b>'+esc(r.d)+'</div></div>';
+  h+='<p class="cr">Receita de Cláudia Martins · Nutricionista</p>';
   var L=byCat[r.c], p=L.indexOf(r);
   h+='<div class="nav">'+(p>0?'<a href="#/r/'+L[p-1].no+'">‹ Anterior</a>':'')+(p<L.length-1?'<a href="#/r/'+L[p+1].no+'">Próxima ›</a>':'')+'</div>';
   app.innerHTML=h;
   app.querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var k=+b.dataset.k,a=ing[r.no]||[],j=a.indexOf(k);if(j>=0)a.splice(j,1);else a.push(k);ing[r.no]=a;save('ing',ing);b.classList.toggle('on')}});
   $('#fv').onclick=function(){var j=fav.indexOf(r.no);if(j>=0)fav.splice(j,1);else fav.push(r.no);save('fav',fav);this.textContent=j>=0?'🤍':'❤️'};
+}
+function claudia(){
+  header('Cláudia Martins','#/');tab('claudia');
+  app.innerHTML='<div class="ab"><img class="ph" src="claudia-acena.jpg" alt="Cláudia Martins"><div class="nm">Cláudia Martins</div><div class="rl">Nutricionista · @claudiagmartinsnutri</div>'+
+  '<div class="box"><p>Oi, eu sou a Cláudia! Criei este livro para mostrar que dá para comer bem sem açúcar, sem glúten e sem lactose, com comida de verdade e sabor de casa.</p><p>Todas as receitas usam ingredientes fáceis de achar no mercado. Na maioria delas você encontra uma <b>Dica da Nutri</b> com o que eu faço na minha cozinha.</p><p>Qualquer dúvida, me chama no Instagram.</p></div>'+
+  '<a class="igb" href="'+IG+'" target="_blank" rel="noopener">📸 Siga @claudiagmartinsnutri</a>'+
+  '<div class="tip"><img src="claudia-avatar.jpg" alt=""><div><b>Importante</b>As receitas e o cardápio são orientações gerais e não substituem uma consulta individual.</div></div>'+
+  '<p class="cr">© Cláudia Martins · Todos os direitos reservados</p></div>';
 }
 var lastQ='';
 function busca(){
@@ -214,7 +245,7 @@ function cardapio(){
   header('Cardápio de 30 Dias','#/');tab('cardapio');
   var h='<p class="note">Toque no prato para abrir a receita. Pode trocar qualquer refeição por outra do mesmo tipo.</p><div class="tabs" id="dt">';
   for(var d=1;d<=30;d++)h+='<button data-d="'+d+'"'+(d===curDay?' class="on"':'')+'>Dia '+d+'</button>';
-  h+='</div><div id="dd"></div><div class="tip" style="margin-top:4px"><b>Importante</b>Este cardápio é uma sugestão geral e não substitui um plano alimentar individual.</div>';
+  h+='</div><div id="dd"></div><div class="tip" style="margin-top:4px"><img src="claudia-avatar.jpg" alt=""><div><b>Importante</b>Este cardápio é uma sugestão geral e não substitui um plano alimentar individual.</div></div>';
   app.innerHTML=h;
   function show(d){curDay=d;save('day',d);
     var m=D.days[d-1];
@@ -240,7 +271,7 @@ function route(){
   document.body.classList.remove('welcome');
   if((!p[1])&&!isApp()&&!seen())return welcome();
   if(p[1]==='c')cat(p[2]);else if(p[1]==='r')recipe(+p[2]);else if(p[1]==='busca')busca();else if(p[1]==='favoritas')favoritas();
-  else if(p[1]==='cardapio')cardapio();else if(p[1]==='subs')subs();else if(p[1]==='lista')lista();else home();
+  else if(p[1]==='cardapio')cardapio();else if(p[1]==='subs')subs();else if(p[1]==='lista')lista();else if(p[1]==='claudia')claudia();else home();
 }
 window.addEventListener('hashchange',route); route();
 
