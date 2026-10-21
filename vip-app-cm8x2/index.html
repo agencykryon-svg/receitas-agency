@@ -96,6 +96,10 @@ details p{padding:0 16px 15px;font-size:14px}
 .fin{text-align:center}
 .disc{font-size:11.5px;color:var(--soft);text-align:center;margin-top:26px;line-height:1.5}
 footer{padding:20px 0 calc(30px + env(safe-area-inset-bottom));text-align:center;font-size:12px;color:var(--soft)}
+.ck{margin-top:20px}
+cakto-upsell-buttons{display:block}
+cakto-upsell-accept::part(button){display:block;width:100%;background:#18a34a;color:#fff;font-family:Poppins,system-ui,sans-serif;font-weight:800;font-size:17px;text-transform:uppercase;border:0;border-radius:14px;padding:18px 16px;box-shadow:0 6px 0 #128a3d,0 12px 24px rgba(24,163,74,.3);cursor:pointer;animation:pu 2s infinite}
+cakto-upsell-reject::part(button){display:block;margin:14px auto 0;background:none;border:0;color:#8a7365;font-family:Poppins,system-ui,sans-serif;font-size:13.5px;text-decoration:underline;cursor:pointer}
 .modal{position:fixed;inset:0;background:rgba(40,24,15,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}
 .modal.on{display:flex}
 .modal div{background:#fff;border-radius:20px;padding:26px 20px;max-width:380px;text-align:center}
@@ -178,9 +182,8 @@ footer{padding:20px 0 calc(30px + env(safe-area-inset-bottom));text-align:center
         <li><span>Acesso imediato, direto no celular</span></li>
       </ul>
       <div class="price"><s>De R$ 147,00</s><div class="p"><small>R$</small> 47</div><div class="c">Pagamento único · sem mensalidade</div></div>
-      <a href="#" class="btn" id="buy">Sim, quero o app por R$ 47<small>Adicionar ao meu pedido</small></a>
-      <div class="sec"><span>🔒 Compra segura</span><span>⚡ Acesso imediato</span><span>🛡️ Garantia de 7 dias</span></div>
-      <button class="no" data-no>Não, quero só as minhas receitas</button>
+      <div class="ck" data-ck></div>
+      <div class="sec"><span>🔒 Compra com 1 clique</span><span>⚡ Acesso imediato</span><span>🛡️ Garantia de 7 dias</span></div>
     </div>
   </div>
 </section>
@@ -203,40 +206,40 @@ footer{padding:20px 0 calc(30px + env(safe-area-inset-bottom));text-align:center
     <h2>Quer adicionar o <em>App da Nutri</em>?</h2>
     <p class="lead">Esta condição de R$ 47 aparece só agora. Fechando esta página, a oferta não aparece de novo.</p>
     <div class="price"><s>De R$ 147,00</s><div class="p"><small>R$</small> 47</div></div>
-    <a href="#" class="btn" data-buy>Sim, quero o app por R$ 47</a>
-    <button class="no" data-no>Não, quero só as minhas receitas</button>
+    <div class="ck" data-ck></div>
     <p class="disc">As orientações do app são de caráter geral e não substituem uma consulta individual. Antes de começar qualquer atividade física, procure orientação médica. Resultados variam de pessoa para pessoa.</p>
   </div>
 </section>
 
 <footer>© Cláudia Martins · Nutricionista · @claudiagmartinsnutri</footer>
 
-<div class="modal" id="modal"><div><b>Tudo certo!</b><p>Suas receitas já foram enviadas para o seu e-mail. Confira também a caixa de spam e promoções.</p><button data-close>Fechar</button></div></div>
 
 <script>
-// >>> Link de pagamento do app (R$ 47) na Cakto:
-var CHECKOUT = '#';
 // >>> Prints de alunas (coloque os arquivos em media/ e liste aqui, ex.: 'media/aluna1.jpg'):
 var PRINTS = [];
-// >>> Para onde vai quem clicar em "Não, quero só as minhas receitas":
-//     ?p=18 (plano 620) -> app das receitas | ?p=10 (plano 475) -> link do R$10 (preencher)
+// >>> Para onde vai a cliente depois de aceitar ou recusar, conforme o plano comprado:
+//     ?p=18 (plano 620) -> app das receitas | ?p=10 (plano 475) -> Drive das 475
 var DESTINO = { '18': 'https://receitas.agency/minhas-receitas-7k3q/', '10': 'https://drive.google.com/drive/folders/1flqzF5_aFO2QxKudm4x-ULroZxhu8m9b?usp=sharing' };
+var OFFER_ID = '5khq8kk';
 
 (function(){
   var q = new URLSearchParams(location.search);
-  function link(){ if(CHECKOUT==='#') return '#oferta'; try{var u=new URL(CHECKOUT);q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});return u.toString()}catch(e){return CHECKOUT} }
-  document.querySelectorAll('#buy,[data-buy]').forEach(function(a){
-    a.href = link();
-    a.addEventListener('click', function(){ if(window.fbq) fbq('track','InitiateCheckout',{value:47,currency:'BRL',content_name:'App da Nutri Claudia Martins'}); });
-  });
-  var m = document.getElementById('modal');
-  document.querySelectorAll('[data-no]').forEach(function(b){ b.onclick=function(){ var d=DESTINO[q.get('p')]; if(d){ location.href=d } else { m.classList.add('on') } } });
-  document.querySelector('[data-close]').onclick=function(){ m.classList.remove('on') };
+  var dest = DESTINO[q.get('p')] || DESTINO['10'];
+  var esc = function(u){ return u.replace(/"/g,'&quot;') };
+  var html = '<cakto-upsell-buttons>'+
+    '<cakto-upsell-accept bg-color="#18a34a" text-color="#ffffff" upsell-accept-url="'+esc(dest)+'" offer-id="'+OFFER_ID+'" app-base-url="https://app.cakto.com.br" offer-type="upsell" upsell-reject-url="'+esc(dest)+'">Sim, quero o app por R$ 47</cakto-upsell-accept>'+
+    '<cakto-upsell-reject upsell-reject-url="'+esc(dest)+'">Não, quero só as minhas receitas</cakto-upsell-reject>'+
+    '</cakto-upsell-buttons>';
+  document.querySelectorAll('[data-ck]').forEach(function(el){ el.innerHTML = html; });
+  document.addEventListener('click', function(e){
+    if(e.target.closest && e.target.closest('cakto-upsell-accept') && window.fbq) fbq('track','InitiateCheckout',{value:47,currency:'BRL',content_name:'DSFIT App da Nutri'});
+  }, true);
+  var sc = document.createElement('script'); sc.src = 'https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js'; document.body.appendChild(sc);
   if(PRINTS.length){
     document.getElementById('relatos').hidden=false;
     document.getElementById('prints').innerHTML = PRINTS.map(function(s){return '<img src="'+s+'" loading="lazy" alt="Relato de aluna da Cláudia Martins">'}).join('');
   }
-  var v=document.querySelector('.vid video'); if(v){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+  var v=document.querySelector('.vid video'); if(v){ var pl=v.play(); if(pl&&pl.catch) pl.catch(function(){}); }
 })();
 </script>
 </body>
