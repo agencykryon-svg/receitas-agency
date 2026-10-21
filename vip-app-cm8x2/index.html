@@ -218,6 +218,9 @@ footer{padding:20px 0 calc(30px + env(safe-area-inset-bottom));text-align:center
 var CHECKOUT = '#';
 // >>> Prints de alunas (coloque os arquivos em media/ e liste aqui, ex.: 'media/aluna1.jpg'):
 var PRINTS = [];
+// >>> Para onde vai quem clicar em "Não, quero só as minhas receitas":
+//     ?p=18 (plano 620) -> app das receitas | ?p=10 (plano 475) -> link do R$10 (preencher)
+var DESTINO = { '18': 'https://receitas.agency/minhas-receitas-7k3q/', '10': '' };
 
 (function(){
   var q = new URLSearchParams(location.search);
@@ -227,7 +230,7 @@ var PRINTS = [];
     a.addEventListener('click', function(){ if(window.fbq) fbq('track','InitiateCheckout',{value:47,currency:'BRL',content_name:'App da Nutri Claudia Martins'}); });
   });
   var m = document.getElementById('modal');
-  document.querySelectorAll('[data-no]').forEach(function(b){ b.onclick=function(){ m.classList.add('on') } });
+  document.querySelectorAll('[data-no]').forEach(function(b){ b.onclick=function(){ var d=DESTINO[q.get('p')]; if(d){ location.href=d } else { m.classList.add('on') } } });
   document.querySelector('[data-close]').onclick=function(){ m.classList.remove('on') };
   if(PRINTS.length){
     document.getElementById('relatos').hidden=false;
