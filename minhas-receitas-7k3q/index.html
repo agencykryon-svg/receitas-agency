@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#D9622B">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Receitas da Nutri">
+<title>620 Receitas da Nutri</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF1E3;--card:#fff;--or:#D9622B;--or2:#fbe3d5;--mu:#E8A93A;--ch:#4A2C1D;--tx:#3a2a20;--soft:#8a7365;--line:#eedfcd;--ok:#2f8a4f}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--bg)}
+body{font-family:Poppins,system-ui,-apple-system,sans-serif;color:var(--tx);font-size:15px;line-height:1.45;min-height:100vh;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.top{position:sticky;top:0;z-index:5;background:var(--or);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;display:flex;align-items:center;gap:10px;min-height:56px}
+.top h1{font-size:17px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .bk{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:20px;flex:none}
+.top .fv{font-size:22px;flex:none;width:36px;height:36px}
+.wrap{max-width:640px;margin:0 auto;padding:16px}
+.hero{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:18px;padding:14px;box-shadow:0 2px 10px rgba(74,44,29,.06)}
+.hero img{width:74px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.18);flex:none}
+.hero b{display:block;font-size:17px;color:var(--ch);line-height:1.2}
+.hero span{font-size:13px;color:var(--soft)}
+.search{margin:14px 0 6px;position:relative}
+.search input{width:100%;border:2px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px 13px 42px;font:inherit;font-size:16px;color:var(--tx);outline:none}
+.search input:focus{border-color:var(--or)}
+.search:before{content:"🔍";position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--or);font-weight:800;margin:20px 2px 10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cat{background:var(--card);border-radius:16px;padding:14px 12px;display:flex;flex-direction:column;gap:4px;box-shadow:0 2px 8px rgba(74,44,29,.05);min-height:96px}
+.cat i{font-style:normal;font-size:26px;line-height:1}
+.cat b{font-size:14px;line-height:1.25;color:var(--ch);font-weight:600}
+.cat small{font-size:12px;color:var(--soft)}
+.bon{display:flex;flex-direction:column;gap:10px}
+.bn{background:var(--card);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(74,44,29,.05)}
+.bn i{font-style:normal;font-size:24px;width:46px;height:46px;border-radius:12px;background:var(--or2);display:grid;place-items:center;flex:none}
+.bn b{display:block;color:var(--ch);font-size:15px;font-weight:600}
+.bn small{color:var(--soft);font-size:12.5px}
+.bn:after,.ri:after{content:"›";margin-left:auto;color:var(--soft);font-size:22px;padding-left:6px}
+.list{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(74,44,29,.05)}
+.ri{display:flex;align-items:center;gap:12px;padding:13px 14px;border-bottom:1px solid var(--line)}
+.ri:last-child{border-bottom:0}
+.ri .no{font-size:11.5px;font-weight:700;color:var(--or);background:var(--or2);border-radius:8px;padding:3px 6px;flex:none;min-width:40px;text-align:center}
+.ri b{display:block;font-weight:500;font-size:14.5px;line-height:1.3;color:var(--ch)}
+.ri small{font-size:12px;color:var(--soft)}
+.empty{text-align:center;color:var(--soft);padding:30px 10px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px}
+.meta span{background:#fff;border-radius:20px;padding:6px 12px;font-size:13px;font-weight:500;color:var(--ch)}
+.rt{font-size:22px;line-height:1.25;color:var(--ch);font-weight:700;margin:4px 0 10px}
+.box{background:var(--card);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(74,44,29,.05)}
+.box h3{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--or);font-weight:800;margin-bottom:10px}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);width:100%;text-align:left}
+.ck:last-child{border-bottom:0}
+.ck:before{content:"";width:20px;height:20px;border:2px solid var(--or);border-radius:6px;flex:none;margin-top:1px}
+.ck.on{color:var(--soft);text-decoration:line-through}
+.ck.on:before{background:var(--or);content:"✓";color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center}
+ol.st{list-style:none;counter-reset:s}
+ol.st li{counter-increment:s;display:flex;gap:12px;padding:8px 0}
+ol.st li:before{content:counter(s);background:var(--mu);color:#fff;font-weight:800;font-size:13px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none}
+.tip{background:#fff6e2;border-left:4px solid var(--mu);border-radius:12px;padding:14px 16px;font-size:14.5px}
+.tip b{display:block;color:var(--ch);font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.nav{display:flex;gap:10px;margin-top:6px}
+.nav a{flex:1;background:#fff;border-radius:14px;padding:12px;text-align:center;font-weight:600;font-size:14px;color:var(--or)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:#fff;border-radius:20px;padding:8px 14px;font-weight:600;font-size:13.5px;white-space:nowrap;color:var(--ch)}
+.tabs button.on{background:var(--or);color:#fff}
+.day h3{display:flex;justify-content:space-between}
+.ml{padding:8px 0;border-bottom:1px dashed var(--line)}
+.ml:last-child{border-bottom:0}
+.ml em{font-style:normal;display:block;font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.04em}
+.ml a{display:block;font-size:14.5px;color:var(--ch);padding:2px 0}
+.ml a span{color:var(--or);font-size:12px;font-weight:600}
+.sb{padding:10px 0;border-bottom:1px dashed var(--line)}
+.sb:last-child{border-bottom:0}
+.sb .x{font-size:13px;color:var(--soft)}
+.sb .x b{color:#b4472a;font-weight:600}
+.sb .y{font-size:14.5px;color:var(--ch);margin-top:2px}
+.sb .y b{color:var(--ok)}
+.sb .z{font-size:13px;color:var(--soft);margin-top:4px;font-style:italic}
+.note{font-size:13px;color:var(--soft);margin:-4px 2px 12px}
+.reset{display:block;margin:4px auto 0;color:var(--or);font-weight:600;font-size:14px;padding:10px}
+.tb{position:fixed;bottom:0;left:0;right:0;z-index:6;background:#fff;border-top:1px solid var(--line);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+.tb a{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:11px;font-weight:600;color:var(--soft);padding:4px 0}
+.tb a i{font-style:normal;font-size:21px;filter:grayscale(1);opacity:.6}
+.tb a.on{color:var(--or)}
+.tb a.on i{filter:none;opacity:1}
+.inst{background:var(--ch);color:#fff;border-radius:16px;padding:14px 16px;margin-top:14px;font-size:13.5px;display:none}
+.inst b{color:var(--mu)}
+.inst .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.inst button{background:var(--mu);color:var(--ch);font-weight:700;border-radius:10px;padding:8px 12px;font-size:13px;flex:none}
+.inst .cl{background:none;color:#fff;opacity:.7;padding:4px 6px}
+.foot{text-align:center;font-size:12px;color:var(--soft);margin:24px 0 8px}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<main class="wrap" id="app"></main>
+<nav class="tb" id="tb">
+  <a href="#/" data-t="home"><i>🏠</i>Início</a>
+  <a href="#/busca" data-t="busca"><i>🔍</i>Buscar</a>
+  <a href="#/cardapio" data-t="cardapio"><i>📅</i>Cardápio</a>
+  <a href="#/favoritas" data-t="favoritas"><i>❤️</i>Favoritas</a>
+</nav>
+<script src="data.js"></script>
+<script>
+(function(){
+var D=window.D, R={}, byCat=D.cats.map(function(){return[]});
+D.r.forEach(function(x){var o={no:x[0],c:x[1],n:x[2],t:x[3],y:x[4],i:x[5],m:x[6],d:x[7]};R[o.no]=o;byCat[o.c].push(o)});
+var ICON=['☕','🍞','🥪','🥗','🍲','🥩','🍗','🐟','🥦','🫙','🍰','🥤'];
+var $=function(s){return document.querySelector(s)}, app=$('#app'), top=$('#top');
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function nn(n){return ('00'+n).slice(-3)}
+function norm(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()}
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var fav=load('fav',[]), shop=load('shop',{}), ing=load('ing',{});
+function header(title,back,extra){top.innerHTML=(back?'<a class="bk" href="'+back+'" aria-label="Voltar">‹</a>':'')+'<h1>'+esc(title)+'</h1>'+(extra||'')}
+function tab(t){document.querySelectorAll('#tb a').forEach(function(a){a.classList.toggle('on',a.dataset.t===t)})}
+function item(r){return '<a class="ri" href="#/r/'+r.no+'"><span class="no">nº '+nn(r.no)+'</span><span><b>'+esc(r.n)+'</b><small>'+esc(r.t)+(r.y?' · '+esc(r.y):'')+'</small></span></a>'}
+
+function home(){
+  header('620 Receitas da Nutri');tab('home');
+  var h='<div class="hero"><img src="capa.webp" alt=""><div><b>Olá! Que bom ter você aqui.</b><span>620 receitas sem açúcar, sem glúten e sem lactose, separadas por categoria, e 3 bônus.</span></div></div>';
+  h+='<a class="search" href="#/busca" style="display:block"><input placeholder="Buscar receita ou ingrediente" readonly tabindex="-1"></a>';
+  h+='<h2>Receitas</h2><div class="grid">'+D.cats.map(function(c,i){return '<a class="cat" href="#/c/'+i+'"><i>'+ICON[i]+'</i><b>'+esc(c)+'</b><small>'+byCat[i].length+' receitas</small></a>'}).join('')+'</div>';
+  h+='<h2>Bônus</h2><div class="bon">'+
+    '<a class="bn" href="#/cardapio"><i>📅</i><span><b>Cardápio de 30 Dias</b><small>O que comer em cada refeição do mês</small></span></a>'+
+    '<a class="bn" href="#/subs"><i>🔄</i><span><b>Guia de Substituições</b><small>Troque trigo, leite e açúcar sem erro</small></span></a>'+
+    '<a class="bn" href="#/lista"><i>🛒</i><span><b>Lista de Compras</b><small>Marque o que já tem em casa</small></span></a></div>';
+  h+='<div class="inst" id="inst"></div>';
+  h+='<p class="foot">por Cláudia Martins · Nutricionista<br>@claudiagmartinsnutri</p>';
+  app.innerHTML=h; showInstall();
+}
+function cat(i){
+  i=+i; if(!byCat[i]) return home();
+  header(D.cats[i],'#/');tab('home');
+  app.innerHTML='<div class="list">'+byCat[i].map(item).join('')+'</div>';
+}
+function recipe(no){
+  var r=R[no]; if(!r) return home();
+  var isF=fav.indexOf(r.no)>=0;
+  header(D.cats[r.c],'#/c/'+r.c,'<button class="fv" id="fv" aria-label="Favoritar">'+(isF?'❤️':'🤍')+'</button>');tab('home');
+  var on=ing[r.no]||[];
+  var h='<div class="rt">'+esc(r.n)+'</div><div class="meta"><span>nº '+nn(r.no)+'</span><span>⏱ '+esc(r.t)+'</span>'+(r.y?'<span>🍽 '+esc(r.y)+'</span>':'')+'</div>';
+  h+='<div class="box"><h3>Ingredientes</h3>'+r.i.map(function(x,k){return '<button class="ck'+(on.indexOf(k)>=0?' on':'')+'" data-k="'+k+'">'+esc(x)+'</button>'}).join('')+'</div>';
+  h+='<div class="box"><h3>Modo de preparo</h3><ol class="st">'+r.m.map(function(x){return '<li><span>'+esc(x)+'</span></li>'}).join('')+'</ol></div>';
+  if(r.d) h+='<div class="tip"><b>Dica da Nutri</b>'+esc(r.d)+'</div>';
+  var L=byCat[r.c], p=L.indexOf(r);
+  h+='<div class="nav">'+(p>0?'<a href="#/r/'+L[p-1].no+'">‹ Anterior</a>':'')+(p<L.length-1?'<a href="#/r/'+L[p+1].no+'">Próxima ›</a>':'')+'</div>';
+  app.innerHTML=h;
+  app.querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var k=+b.dataset.k,a=ing[r.no]||[],j=a.indexOf(k);if(j>=0)a.splice(j,1);else a.push(k);ing[r.no]=a;save('ing',ing);b.classList.toggle('on')}});
+  $('#fv').onclick=function(){var j=fav.indexOf(r.no);if(j>=0)fav.splice(j,1);else fav.push(r.no);save('fav',fav);this.textContent=j>=0?'🤍':'❤️'};
+}
+var lastQ='';
+function busca(){
+  header('Buscar receita','#/');tab('busca');
+  app.innerHTML='<div class="search" style="margin-top:0"><input id="q" type="search" placeholder="Ex.: bolo, frango, banana" autocomplete="off" value="'+esc(lastQ)+'"></div><div id="res"></div>';
+  var q=$('#q'), res=$('#res');
+  function run(){
+    lastQ=q.value; var t=norm(q.value.trim());
+    if(t.length<2){res.innerHTML='<p class="empty">Digite o nome da receita ou um ingrediente que você tem em casa.</p>';return}
+    var w=t.split(/\s+/), a=[], b=[];
+    D.r.forEach(function(x){var r=R[x[0]],n=norm(r.n);
+      if(w.every(function(p){return n.indexOf(p)>=0}))a.push(r);
+      else if(w.every(function(p){return norm(r.n+' '+r.i.join(' ')).indexOf(p)>=0}))b.push(r)});
+    var all=a.concat(b);
+    res.innerHTML=all.length?'<p class="note">'+all.length+' receita'+(all.length>1?'s':'')+'</p><div class="list">'+all.slice(0,150).map(item).join('')+'</div>':'<p class="empty">Nenhuma receita encontrada.</p>';
+  }
+  q.oninput=run; run(); setTimeout(function(){q.focus()},50);
+}
+function favoritas(){
+  header('Favoritas','#/');tab('favoritas');
+  var L=fav.map(function(n){return R[n]}).filter(Boolean);
+  app.innerHTML=L.length?'<div class="list">'+L.map(item).join('')+'</div>':'<p class="empty">Toque no 🤍 dentro de uma receita para guardar ela aqui.</p>';
+}
+var curDay=load('day',1);
+function cardapio(){
+  header('Cardápio de 30 Dias','#/');tab('cardapio');
+  var h='<p class="note">Toque no prato para abrir a receita. Pode trocar qualquer refeição por outra do mesmo tipo.</p><div class="tabs" id="dt">';
+  for(var d=1;d<=30;d++)h+='<button data-d="'+d+'"'+(d===curDay?' class="on"':'')+'>Dia '+d+'</button>';
+  h+='</div><div id="dd"></div><div class="tip" style="margin-top:4px"><b>Importante</b>Este cardápio é uma sugestão geral e não substitui um plano alimentar individual.</div>';
+  app.innerHTML=h;
+  function show(d){curDay=d;save('day',d);
+    var m=D.days[d-1];
+    $('#dd').innerHTML='<div class="box day"><h3><span>Dia '+d+'</span><span style="color:var(--soft)">Semana '+Math.ceil(d/7)+'</span></h3>'+m.map(function(x){return '<div class="ml"><em>'+x[0]+'</em>'+x[1].map(function(n){return '<a href="#/r/'+n+'">'+esc(R[n].n)+' <span>nº '+nn(n)+'</span></a>'}).join('')+'</div>'}).join('')+'</div>';
+    document.querySelectorAll('#dt button').forEach(function(b){b.classList.toggle('on',+b.dataset.d===d)});
+  }
+  document.querySelectorAll('#dt button').forEach(function(b){b.onclick=function(){show(+b.dataset.d)}});
+  show(curDay); var a=document.querySelector('#dt .on'); if(a)a.scrollIntoView({inline:'center',block:'nearest'});
+}
+function subs(){
+  header('Guia de Substituições','#/');tab('home');
+  app.innerHTML='<p class="note">No lugar do ingrediente de cima, use o de baixo.</p>'+D.subs.map(function(s){return '<div class="box"><h3>'+esc(s[0])+'</h3>'+s[1].map(function(x){return '<div class="sb"><div class="x">No lugar de <b>'+esc(x[0])+'</b></div><div class="y">use <b>'+esc(x[1])+'</b></div>'+(x[2]?'<div class="z">'+esc(x[2])+'</div>':'')+'</div>'}).join('')+'</div>'}).join('');
+}
+function lista(){
+  header('Lista de Compras','#/');tab('home');
+  app.innerHTML='<p class="note">Marque o que já tem em casa. O que ficar sem marcar é o que falta comprar.</p>'+D.lista.map(function(s,i){return '<div class="box"><h3>'+esc(s[0])+'</h3>'+s[1].map(function(x,k){var id=i+'-'+k;return '<button class="ck'+(shop[id]?' on':'')+'" data-id="'+id+'">'+esc(x)+'</button>'}).join('')+'</div>'}).join('')+'<button class="reset" id="rs">Desmarcar tudo</button>';
+  app.querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var id=b.dataset.id;if(shop[id])delete shop[id];else shop[id]=1;save('shop',shop);b.classList.toggle('on')}});
+  $('#rs').onclick=function(){shop={};save('shop',shop);lista()};
+}
+function route(){
+  var p=(location.hash||'#/').slice(1).split('/');
+  window.scrollTo(0,0);
+  if(p[1]==='c')cat(p[2]);else if(p[1]==='r')recipe(+p[2]);else if(p[1]==='busca')busca();else if(p[1]==='favoritas')favoritas();
+  else if(p[1]==='cardapio')cardapio();else if(p[1]==='subs')subs();else if(p[1]==='lista')lista();else home();
+}
+window.addEventListener('hashchange',route); route();
+
+// instalar na tela inicial
+var deferred=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;showInstall()});
+function showInstall(){
+  var el=$('#inst'); if(!el) return;
+  var standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+  if(standalone||load('instHide',false)) return;
+  var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  if(deferred){el.innerHTML='<div class="row"><span>Coloque o app na tela do seu celular</span><button id="ib">Instalar</button></div>';el.style.display='block';
+    $('#ib').onclick=function(){deferred.prompt();deferred=null;el.style.display='none'}}
+  else if(ios){el.innerHTML='<div class="row"><span><b>Deixe na tela do iPhone:</b> toque em <b>Compartilhar</b> ⬆️ e depois em <b>Adicionar à Tela de Início</b>.</span><button class="cl" id="ic">✕</button></div>';el.style.display='block';
+    $('#ic').onclick=function(){save('instHide',true);el.style.display='none'}}
+  else if(/android/i.test(navigator.userAgent)){el.innerHTML='<div class="row"><span><b>Deixe na tela do celular:</b> toque nos <b>3 pontinhos ⋮</b> do navegador e em <b>Adicionar à tela inicial</b>.</span><button class="cl" id="ic">✕</button></div>';el.style.display='block';
+    $('#ic').onclick=function(){save('instHide',true);el.style.display='none'}}
+}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
+})();
+</script>
+</body>
+</html>
