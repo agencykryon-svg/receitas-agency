@@ -12,6 +12,7 @@
 <style>
 :root{--bg:#FBF1E3;--or:#D9622B;--mu:#E8A93A;--ch:#4A2C1D;--tx:#3a2a20;--soft:#8a7365;--line:#eedfcd;--g:#18a34a;--g2:#128a3d;--fit:#1E8A45}
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 body{font-family:Poppins,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;padding-bottom:calc(30px + env(safe-area-inset-bottom))}
 .w{max-width:520px;margin:0 auto;padding:0 18px}
 .hd{text-align:center;padding:calc(28px + env(safe-area-inset-top)) 0 6px}
@@ -37,6 +38,11 @@ ol li:before{content:counter(s);flex:none;width:22px;height:22px;border-radius:5
 .btn small{display:block;text-transform:none;font-weight:500;font-size:12.5px;opacity:.9}
 .fit{background:var(--fit);box-shadow:0 5px 0 #146b34}
 .rec{background:var(--or);box-shadow:0 5px 0 #b44d1f}
+.pdf{background:#fff;color:var(--ch);border:2px solid var(--line);box-shadow:none;margin-top:12px}
+.home{background:var(--ch);color:#fff;border-radius:14px;padding:14px 16px;margin-top:14px;font-size:14px}
+.home b{display:block;color:var(--mu);margin-bottom:4px}
+.home p{font-size:14px}
+.home p+p{margin-top:6px}
 .tip{font-size:13px;color:var(--soft);margin-top:10px;text-align:center}
 .help{text-align:center;font-size:13.5px;margin-top:24px;color:var(--soft)}
 .help a{color:var(--or);font-weight:600}
@@ -73,6 +79,11 @@ ol li:before{content:counter(s);flex:none;width:22px;height:22px;border-radius:5
     <h2 id="rt">Abra as suas receitas</h2>
     <p id="rd">As receitas que você comprou continuam com você.</p>
     <a class="btn rec" id="rb" href="#" target="_blank" rel="noopener">Abrir minhas receitas</a>
+    <a class="btn pdf" id="pb" href="#" target="_blank" rel="noopener" hidden>Baixar os PDFs<small>Livro e bônus no Google Drive</small></a>
+    <div class="home" id="hm" hidden>
+      <b>📱 Deixe o app na tela do celular</b>
+      <div id="hmi"></div>
+    </div>
     <p class="tip">Você também recebeu todos os acessos no seu e-mail. Confira a caixa de spam e promoções.</p>
   </div>
 
@@ -82,10 +93,17 @@ ol li:before{content:counter(s);flex:none;width:22px;height:22px;border-radius:5
 (function(){
   var q=new URLSearchParams(location.search), p=String(parseInt(q.get('p')||'',10));
   var R={
-    '18':{t:'Abra as suas 620 receitas',d:'O app com as 620 receitas e os 3 bônus: cardápio de 30 dias, guia de substituições e lista de compras.',b:'Abrir minhas 620 receitas',u:'https://receitas.agency/minhas-receitas-7k3q/'},
-    '10':{t:'Abra as suas 475 receitas',d:'O livro com as 475 receitas em PDF, para ler no celular ou imprimir.',b:'Abrir minhas 475 receitas',u:'https://drive.google.com/drive/folders/1flqzF5_aFO2QxKudm4x-ULroZxhu8m9b?usp=sharing'}
+    '18':{t:'Abra as suas 620 receitas',d:'O app com as 620 receitas e os 3 bônus: cardápio de 30 dias, guia de substituições e lista de compras.',b:'Abrir o app das 620 receitas',u:'https://receitas.agency/minhas-receitas-7k3q/',pdf:'https://drive.google.com/drive/folders/1rMYl3Z55PDxwPSoDU08nkwVQXld_doS7?usp=sharing'},
+    '10':{t:'Abra as suas 475 receitas',d:'O livro com as 475 receitas em PDF, para ler no celular ou imprimir.',b:'Baixar minhas 475 receitas (PDF)',u:'https://drive.google.com/drive/folders/1flqzF5_aFO2QxKudm4x-ULroZxhu8m9b?usp=sharing'}
   }[p]||null;
-  if(R){document.getElementById('rt').textContent=R.t;document.getElementById('rd').textContent=R.d;var b=document.getElementById('rb');b.textContent=R.b;b.href=R.u}
+  if(R){document.getElementById('rt').textContent=R.t;document.getElementById('rd').textContent=R.d;var b=document.getElementById('rb');b.textContent=R.b;b.href=R.u;
+    if(R.pdf){var pb=document.getElementById('pb');pb.href=R.pdf;pb.hidden=false;
+      var ios=/iphone|ipad|ipod/i.test(navigator.userAgent), and=/android/i.test(navigator.userAgent);
+      var ti='<p><b style="display:inline;color:#fff">iPhone:</b> abra o app das receitas no Safari, toque em <b style="display:inline">Compartilhar</b> ⬆️ e depois em <b style="display:inline">Adicionar à Tela de Início</b>.</p>';
+      var ta='<p><b style="display:inline;color:#fff">Android:</b> abra o app das receitas no Chrome, toque nos <b style="display:inline">3 pontinhos ⋮</b> e em <b style="display:inline">Adicionar à tela inicial</b>.</p>';
+      document.getElementById('hmi').innerHTML = ios ? ti : and ? ta : ti+ta;
+      document.getElementById('hm').hidden=false;}
+  }
   else{document.getElementById('rb').style.display='none';document.getElementById('rd').textContent='O acesso às suas receitas foi enviado para o seu e-mail.'}
   if(window.fbq&&!sessionStorage.getItem('pdsf')){try{sessionStorage.setItem('pdsf','1')}catch(e){}}
 })();
