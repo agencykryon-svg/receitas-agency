@@ -224,7 +224,7 @@ var OFFER_ID = '5khq8kk';
 
 (function(){
   var q = new URLSearchParams(location.search);
-  var dest = DESTINO[q.get('p')] || DESTINO['10'];
+  var dest = DESTINO[String(parseInt(q.get('p')||'',10))] || DESTINO['10'];
   var esc = function(u){ return u.replace(/"/g,'&quot;') };
   var html = '<cakto-upsell-buttons>'+
     '<cakto-upsell-accept bg-color="#18a34a" text-color="#ffffff" upsell-accept-url="'+esc(dest)+'" offer-id="'+OFFER_ID+'" app-base-url="https://app.cakto.com.br" offer-type="upsell" upsell-reject-url="'+esc(dest)+'">Sim, quero o app por R$ 47</cakto-upsell-accept>'+
