@@ -20,6 +20,11 @@ a{color:inherit}
 .w{max-width:560px;margin:0 auto;padding:0 18px}
 .top{background:var(--ch);color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:calc(9px + env(safe-area-inset-top)) 12px 9px}
 .top b{color:var(--mu)}
+.stay{margin:18px auto 0;background:#c62f1f;color:#fff;border-radius:16px;padding:14px 16px;text-align:center;box-shadow:0 8px 22px rgba(198,47,31,.3);animation:sh 2.4s infinite}
+.stay b{display:block;font-size:24px;font-weight:900;line-height:1.15;letter-spacing:.01em}
+.stay span{display:block;font-size:14px;margin-top:4px;opacity:.95}
+@keyframes sh{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+@media (prefers-reduced-motion:reduce){.stay{animation:none}}
 .ok{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px auto 0;background:#e7f6ec;color:var(--g2);font-weight:700;font-size:13px;border-radius:99px;padding:7px 14px;width:max-content;max-width:100%}
 .ok i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-size:11px}
 .from{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px 0 8px}
@@ -112,6 +117,7 @@ cakto-upsell-reject::part(button){display:block;margin:14px auto 0;background:no
 <div class="top">Uma mensagem da <b>Cláudia Martins</b> para você</div>
 
 <div class="w">
+  <div class="stay"><b>⚠️ NÃO FECHE ESTA PÁGINA</b><span>Seu acesso já está garantido. Esta oferta aparece só agora e não volta depois.</span></div>
   <div class="ok"><i>✓</i>Compra aprovada · suas receitas já vão para o seu e-mail</div>
   <div class="from"><img src="media/claudia-avatar.jpg" alt="Cláudia Martins"><span><b>Cláudia Martins</b>Nutricionista · @claudiagmartinsnutri</span></div>
   <h1>Espere! <span>Antes de abrir suas receitas,</span> veja o que eu preparei para você.</h1>
