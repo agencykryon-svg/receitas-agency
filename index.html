@@ -162,7 +162,7 @@
   .plans{background:var(--green-dark);padding:39px 0 0;color:#fff;text-align:center}
   .plans h2{font-weight:900;font-size:39px;text-transform:uppercase}
   .plans .lead{font-size:16.5px;font-weight:600;opacity:.9;margin:2px 0 39px}
-  .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1074px;margin:0 auto}
+  .plan-grid{display:grid;grid-template-columns:1fr;gap:30px;max-width:540px;margin:0 auto}
   .plan{background:#fff;color:var(--text);border-radius:21px;padding:36px 30px 30px;text-align:left;display:flex;flex-direction:column;position:relative;border-top:7.5px solid var(--orange)}
   .plan.premium{border-top:0}
   .plan .chip{align-self:center;font-size:12px;font-weight:800;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:18px}
@@ -487,17 +487,16 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
 <!-- PLANOS -->
 <section class="plans" id="planos">
   <div class="container">
-    <h2>Escolha seu plano</h2>
+    <h2>Garanta suas receitas</h2>
     <p class="lead">Oferta especial por tempo limitado · Acesso imediato</p>
     <div class="plan-grid">
       <div class="plan premium">
-        <span class="ribbon">Mais Vendida</span>
+        <span class="ribbon">Oferta Completa</span>
         <span class="chip super">🔥 Super Oferta</span>
         <img class="plan-cover" src="img/capa-620.webp" width="530" height="800" loading="lazy" alt="Capa do livro 620 Receitas da Nutri com 3 bônus">
         <h3>620 Receitas Premium</h3>
         <ul>
           <li>620 Receitas Sem Açúcar, Glúten e Lactose</li>
-          <li>145 receitas a mais que a Oferta Básica</li>
           <li>Acesso Vitalício</li>
           <li>Entrega Imediata por E-mail</li>
         </ul>
@@ -508,26 +507,11 @@ src="https://www.facebook.com/tr?id=855341530974695&ev=PageView&noscript=1"
           <li>Lista de Compras Essenciais</li>
         </ul>
         <div class="appgift"><span>📱</span><div><b>+ Aplicativo de brinde</b>Além do PDF, você acessa tudo num app no celular: receitas por categoria, busca por ingrediente, favoritas e cardápio.</div></div>
-        <div class="upsell">Por apenas <b>R$ 8 a mais</b> você leva <b>+145 receitas</b>, os <b>3 bônus</b> e o <b>aplicativo</b></div>
+        <div class="upsell">Tudo isso por <b>menos que um lanche</b>: <b>620 receitas</b>, os <b>3 bônus</b> e o <b>aplicativo</b></div>
         <div class="bottom">
           <div class="from">De R$ 197,00 por apenas</div>
           <div class="price">R$ 18</div>
           <a href="https://pay.cakto.com.br/tmkczdu_1222384" class="btn">Comprar Agora</a>
-        </div>
-      </div>
-      <div class="plan">
-        <span class="chip basic">⚡ Oferta Básica</span>
-        <img class="plan-cover" src="img/capa-475.webp" width="538" height="800" loading="lazy" alt="Capa do livro 475 Receitas da Nutri">
-        <h3>475 Receitas Completas</h3>
-        <ul>
-          <li>475 Receitas Sem Açúcar, Glúten e Lactose</li>
-          <li>Acesso Vitalício</li>
-          <li>Entrega Imediata por E-mail</li>
-        </ul>
-        <div class="bottom">
-          <div class="from">De R$ 97,00 por apenas</div>
-          <div class="price">R$ 10</div>
-          <a href="https://pay.cakto.com.br/pvobkr7_1222366" class="btn">Comprar Agora</a>
         </div>
       </div>
     </div>
@@ -634,7 +618,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="p
 (function(){var q=new URLSearchParams(location.search);if(!q.toString())return;
 document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function(a){try{var u=new URL(a.href);q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}});})();
 </script>
-<div class="sticky-cta" id="stickyCta"><a href="#planos"><span>Quero as receitas<small>A partir de R$ 10 · acesso imediato</small></span></a></div>
+<div class="sticky-cta" id="stickyCta"><a href="#planos"><span>Quero as receitas<small>Por apenas R$ 18 · acesso imediato</small></span></a></div>
 <script>
 (function(){var b=document.getElementById('stickyCta'),p=document.getElementById('planos');if(!b||!p)return;var t=false;
 function u(){var y=window.scrollY,r=p.getBoundingClientRect();var inPlans=r.top<window.innerHeight&&r.bottom>0;b.classList.toggle('show',y>700&&!inPlans);t=false}
